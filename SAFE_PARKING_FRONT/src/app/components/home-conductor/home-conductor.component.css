@@ -1,28 +1,16 @@
 /*Estilos para el encabezado*/
-.encabezado {
 
-  background-color: #333;
-  color: #fff;
+.encabezado {
+  width: 100%;
+  margin: auto;
   text-align: left;
   padding: 20px;
-  left: 350px;
+  background-color: #333;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
 
-}
-
-.container .btn-menu,
-.logo {
-  float: left;
-  line-height: 100px;
-}
-
-.container .btn-menu label {
-  color: #0f0f0f;
+.encabezado .btn-menu label {
+  color: #fafafa;
   font-size: 25px;
   cursor: pointer;
 }
@@ -35,7 +23,7 @@
 }
 
 
-.container .menu a {
+.encabezado .menu a {
   display: inline-block;
   padding: 15px;
   line-height: normal;
@@ -47,7 +35,7 @@
   margin-right: 5px;
 }
 
-.container .menu a:hover {
+.encabezado .menu a:hover {
   border-bottom: 2px solid #c7c7c7;
   padding-bottom: 5px;
 }
@@ -60,7 +48,7 @@
   display: none;
 }
 
-.container-menu {
+.encabezado-menu {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -72,7 +60,7 @@
   visibility: hidden;
 }
 
-#btn-menu:checked~.container-menu {
+#btn-menu:checked~.encabezado-menu {
   opacity: 1;
   visibility: visible;
 }
@@ -87,7 +75,7 @@
   transform: translateX(-100%);
 }
 
-#btn-menu:checked~.container-menu .cont-menu {
+#btn-menu:checked~.encabezado-menu .cont-menu {
   transform: translateX(0%);
 }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-home-arrendador',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-arrendador.component.css']
 })
 export class HomeArrendadorComponent {
-  constructor() {}
+   constructor(public route: ActivatedRoute, private router: Router) {}
+  ngOnInit() {}
 }

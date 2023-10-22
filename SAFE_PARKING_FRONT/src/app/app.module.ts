@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,10 +21,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MatCardModule } from '@angular/material/card';
 import { JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
-import { RouterModule, Routes } from '@angular/router';
+import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RouterModule, Routes } from '@angular/router';
     SignInComponent,
     VehiculosComponent,
     HomeConductorComponent,
+    ListarVehiculosComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,12 +56,9 @@ import { RouterModule, Routes } from '@angular/router';
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,
+    CommonModule,
     JwtModule,
     HttpClientModule,
-    RouterModule,
-    FormsModule, //Añadir
-    ReactiveFormsModule, //Añadir
-    RouterModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

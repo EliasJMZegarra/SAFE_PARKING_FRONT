@@ -1,1 +1,24 @@
-<p>vehiculos works!</p>
+<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+
+    <body>
+      <div class="content">
+        <nav>
+          <ul>
+            <li><a href="listar_vehiculos">Listar vehículos</a></li>
+            <li><a href="#">Registrar vehículo</a></li>
+            <li><a href="#">Eliminar vehículo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </body>
+  </html>
+</div>

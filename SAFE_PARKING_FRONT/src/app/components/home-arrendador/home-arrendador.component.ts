@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './home-arrendador.component.html',
   styleUrls: ['./home-arrendador.component.css']
 })
-export class HomeArrendadorComponent {  
-  ngOnInit(): void {}
-
+export class HomeArrendadorComponent {
+  constructor() {}
 }

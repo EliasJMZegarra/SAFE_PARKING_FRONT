@@ -1,3 +1,4 @@
+import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'vehiculos', component: VehiculosComponent },
   { path: 'home-condutor', component: HomeConductorComponent },
   { path: 'navbar', component: NavbarComponent },
+  { path: 'home-arrendador', component: HomeArrendadorComponent },
 ];
 
 @NgModule({

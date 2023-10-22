@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
+import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { HomeConductorComponent } from './components/home-conductor/home-conduct
     SignInComponent,
     VehiculosComponent,
     HomeConductorComponent,
+    ListarVehiculosComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { HomeConductorComponent } from './components/home-conductor/home-conduct
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,
+    CommonModule,
     JwtModule,
     HttpClientModule,
   ],

@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +18,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon" />
     <title>Document</title>
+
 </head>
 
+
 <body>
+    
     <!--Logo inicial y eslogan-->
     <section id="Slogan-Inicial">
         <div class="container">
@@ -59,10 +64,6 @@
                 </g>
             </svg>
         </div>
-
-
-
-
 
     </section>
 
@@ -171,9 +172,7 @@
                             ¿Buscas estacionamientos? Encuentra los mejores estacionamientos para tu vehiculo accediendo
                             como conductor. Accede a los beneficios de formar parte de esta familia.
                         </p>
-                        <a href='/parkea'>
-                            <button><strong>Saber más</strong></button>
-                        </a>
+                        <button mat-button routerLink="/home-condutor"> Saber más</button>
                     </div>
                 </div>
 
@@ -184,9 +183,7 @@
                             Unete ahora a nuestro equipo, siendo socio gana dinero extra arrendando un establecimiento
                             que tengas disponible para convertirlo en un estacionamiento.
                         </p>
-                        <a href='/gana'>
-                            <button><strong>Saber más</strong></button>
-                        </a>
+                        <button mat-button routerLink="/home-arrendador"> Saber más</button>
                     </div>
                     <div class="slider">
                         <ul>
@@ -229,7 +226,7 @@
 
         <div class="Testimonios_texto">
             <h1>TESTIMONIOS</h1>
-            <p>COMENTARIOS QUE NOS AVALAN</p>
+            <p>Comentarios que nos avalan</p>
         </div>
 
         <div class="container">
@@ -297,52 +294,53 @@
     </section>
     <!--Chat box-->
 
-
-
-    <!--Footer-->
-    <footer>
-        <div class="container">
-            <div class="seccion">
-                <a href="#" class="logo">
-                    <img class="logo_/assets/imagen" src="/assets/image/Logo_verde.png" alt="logo">
-                    <h2 class="nombre-empresa">SAFE PARKING</h2>
-                </a>
+        <!--Footer-->
+        <footer>
+            <div class="container">
+                <div class="seccion">
+                    <a href="#" class="logo">
+                        <img class="logo_/assets/imagen" src="/assets/image/Logo_verde.png" alt="logo">
+                        <h2 class="nombre-empresa">SAFE PARKING</h2>
+                    </a>
+                </div>
+    
+                <div class="seccion">
+                    <h2>Soluciones</h2>
+                    <a href="#">App Desarrollo</a>
+                    <a href="#">IOS Desarrollo</a>
+                    <a href="#">App Marketing</a>
+                    <a href="#">Android Desarrollo</a>
+                </div>
+    
+                <div class="seccion">
+                    <h2>Compañia</h2>
+    
+                    <a href="#">Acerca de</a>
+                    <a href="#">Trabajos</a>
+                    <a href="#">Procesos</a>
+                    <a href="#">Servicios</a>
+                </div>
+    
+                <div class="seccion">
+                    <h2>Redes Sociales</h2>
+                    <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+                    <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+                </div>
+    
             </div>
-
-            <div class="seccion">
-                <h2>Soluciones</h2>
-                <a href="#">App Desarrollo</a>
-                <a href="#">IOS Desarrollo</a>
-                <a href="#">App Marketing</a>
-                <a href="#">Android Desarrollo</a>
+            <div class="Copyright">
+                <hr>
+                <p>Todos los derechos reservados ©2022
+                    <b>Safe Parking</b>
+                </p>
             </div>
+        </footer>
 
-            <div class="seccion">
-                <h2>Compañia</h2>
-
-                <a href="#">Acerca de</a>
-                <a href="#">Trabajos</a>
-                <a href="#">Procesos</a>
-                <a href="#">Servicios</a>
-            </div>
-
-            <div class="seccion">
-                <h2>Redes Sociales</h2>
-                <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
-                <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-                <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-            </div>
-
-        </div>
-        <div class="Copyright">
-            <hr>
-            <p>Todos los derechos reservados ©2022
-                <b>Safe Parking</b>
-            </p>
-        </div>
-    </footer>
 
 </body>
 
+
 </html>
+

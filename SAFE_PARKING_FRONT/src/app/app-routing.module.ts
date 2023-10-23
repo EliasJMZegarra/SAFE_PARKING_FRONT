@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'home-arrendador', component: HomeArrendadorComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'footer', component: FooterComponent },
 ];
 
 @NgModule({

@@ -2,10 +2,9 @@
 
 .encabezado {
   width: 100%;
-  margin: auto;
   text-align: left;
-  padding: 20px;
   background-color: #333;
+  padding: 20px;
 }
 
 
@@ -104,4 +103,45 @@
   color: #fff;
   cursor: pointer;
   font-size: 18px;
+}
+
+
+
+/*Contenido principal*/
+
+
+
+.contenido-principal {
+  margin: 0;
+  text-align: center;
+  margin: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 300px;
+  height: auto;
+}
+
+.intro {
+  text-align: center;
+}
+
+.features {
+  margin: 20px 0;
+}
+
+.feature {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
 }

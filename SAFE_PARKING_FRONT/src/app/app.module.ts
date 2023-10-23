@@ -33,6 +33,7 @@ import { HomeArrendadorComponent } from './components/home-arrendador/home-arren
 import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HomeComponent } from './components/home/home.component';
     HomeConductorComponent,
     ListarVehiculosComponent,
     HomeArrendadorComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
     
   ],
   imports: [

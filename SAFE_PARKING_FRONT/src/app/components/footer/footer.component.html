@@ -1,53 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-        <!--Footer-->
-        <footer>
-            <div class="container">
-                <div class="seccion">
-                    <a href="#" class="logo">
-                        <img class="logo_/assets/imagen" src="/assets/image/Logo_verde.png" alt="logo">
-                        <h2 class="nombre-empresa">SAFE PARKING</h2>
-                    </a>
-                </div>
-    
-                <div class="seccion">
-                    <h2>Soluciones</h2>
-                    <a href="#">App Desarrollo</a>
-                    <a href="#">IOS Desarrollo</a>
-                    <a href="#">App Marketing</a>
-                    <a href="#">Android Desarrollo</a>
-                </div>
-    
-                <div class="seccion">
-                    <h2>Compañia</h2>
-    
-                    <a href="#">Acerca de</a>
-                    <a href="#">Trabajos</a>
-                    <a href="#">Procesos</a>
-                    <a href="#">Servicios</a>
-                </div>
-    
-                <div class="seccion">
-                    <h2>Redes Sociales</h2>
-                    <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
-                    <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
-                    <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-                    <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-                </div>
-    
-            </div>
-            <div class="Copyright">
-                <hr>
-                <p>Todos los derechos reservados ©2022
-                    <b>Safe Parking</b>
-                </p>
-            </div>
-        </footer>
-</body>
-</html>
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+    <body>
+      <!--Footer-->
+      <footer>
+        <div class="container">
+          <div class="seccion">
+            <a href="#" class="logo">
+              <img
+                class="logo_/assets/imagen"
+                src="/assets/image/Logo_verde.png"
+                alt="logo"
+              />
+              <h2 class="nombre-empresa">SAFE PARKING</h2>
+            </a>
+          </div>
+
+          <div class="seccion">
+            <h2>Soluciones</h2>
+            <a href="#">App Desarrollo</a>
+            <a href="#">IOS Desarrollo</a>
+            <a href="#">App Marketing</a>
+            <a href="#">Android Desarrollo</a>
+          </div>
+
+          <div class="seccion">
+            <h2>Compañia</h2>
+
+            <a href="#">Acerca de</a>
+            <a href="#">Trabajos</a>
+            <a href="#">Procesos</a>
+            <a href="#">Servicios</a>
+          </div>
+
+          <div class="seccion">
+            <h2>Redes Sociales</h2>
+            <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+            <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+          </div>
+        </div>
+        <div class="Copyright">
+          <hr />
+          <p>
+            Todos los derechos reservados ©2022
+            <b>Safe Parking</b>
+          </p>
+        </div>
+      </footer>
+    </body>
+  </html>
+</div>

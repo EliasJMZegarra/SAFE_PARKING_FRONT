@@ -1,0 +1,7 @@
+.spacer{
+  flex: 1 1 auto;
+}
+.boton-verde-esmeralda {
+  background-color: #8bffc5; /* Código de color para verde esmeralda */
+  color: white; /* Color del texto */
+}

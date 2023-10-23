@@ -9,12 +9,16 @@ import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculo
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
+
   { path: 'listar_vehiculos', component: ListarVehiculosComponent },
-  { path: 'vehiculos', component: VehiculosComponent, },
+  { path: 'registrar_vehiculos', component: CreaeditaVehiculosComponent },
+
+  { path: 'vehiculos', component: VehiculosComponent },
   { path: 'home-condutor', component: HomeConductorComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'home-arrendador', component: HomeArrendadorComponent },
@@ -26,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

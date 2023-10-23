@@ -34,6 +34,7 @@ import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculo
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CreaeditaVehiculosComponent
     
   ],
   imports: [

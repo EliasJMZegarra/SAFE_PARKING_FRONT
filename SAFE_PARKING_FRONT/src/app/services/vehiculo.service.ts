@@ -26,7 +26,7 @@ export class VehiculoService {
   }
 
   insert(de: Vehiculo) {
-    return this.http.post(this.url, de);
+    return this.http.post(`${this.url}/Registrar`, de);
   }
 
   delete(id: number) {

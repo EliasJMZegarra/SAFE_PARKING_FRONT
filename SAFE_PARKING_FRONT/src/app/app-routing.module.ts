@@ -10,6 +10,7 @@ import { HomeArrendadorComponent } from './components/home-arrendador/home-arren
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
+import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
 
   { path: 'listar_vehiculos', component: ListarVehiculosComponent },
   { path: 'registrar_vehiculos', component: CreaeditaVehiculosComponent },
+  { path: 'buscar_vehiculos', component: BuscarVehiculosComponent },
 
   { path: 'vehiculos', component: VehiculosComponent },
   { path: 'home-condutor', component: HomeConductorComponent },

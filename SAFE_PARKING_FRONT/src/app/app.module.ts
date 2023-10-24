@@ -24,7 +24,6 @@ import { MatCardModule } from '@angular/material/card';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { LoginService } from './services/login.service';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
@@ -35,6 +34,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
+import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +48,8 @@ import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-ve
     HomeArrendadorComponent,
     HomeComponent,
     FooterComponent,
-    CreaeditaVehiculosComponent
-    
+    CreaeditaVehiculosComponent,
+    BuscarVehiculosComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +72,7 @@ import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-ve
     CommonModule,
     JwtModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

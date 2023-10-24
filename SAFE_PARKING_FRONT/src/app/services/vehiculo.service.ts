@@ -27,7 +27,7 @@ export class VehiculoService {
   }
   // Eliminar un vehículo
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.url}/Eliminar/${id}`);
   }
   // Crear un nuevo vehículo
   insert(de: Vehiculo) {

@@ -15,7 +15,7 @@ export class SignUpComponent {
   username: string = '';
   password: string = '';
   loading = false;
-  constructor(private authService: LoginService, private router: Router) {}
+  constructor(private authService: LoginService, private router: Router, public route: ActivatedRoute) {}
 
   onSubmit() {
     this.authService.login(this.username, this.password).subscribe(

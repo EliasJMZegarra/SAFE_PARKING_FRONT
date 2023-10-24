@@ -8,5 +8,5 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent {
-  constructor() {}
+  constructor(public route: ActivatedRoute, private router: Router) {}
 }

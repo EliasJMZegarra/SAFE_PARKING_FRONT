@@ -1,7 +1,7 @@
+import { Vehiculo } from './../../../models/vehiculo';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { Vehiculo } from 'src/app/models/vehiculo';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -20,11 +20,33 @@ export class ListarVehiculosComponent implements OnInit {
     'marca',
     'tamanio',
     'tarjeta de propiedad',
+    'Modificar'
   ];
+  editarVehiculo: Vehiculo | null = null; // Variable para realizar un seguimiento de la fila en edición
+
+
+
   constructor(private vS: VehiculoService, public route: ActivatedRoute) {}
   ngOnInit(): void {
     this.vS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+    });
+  }
+
+  
+  modificar(vehiculo: Vehiculo) {
+    
+    this.editarVehiculo = vehiculo; // Establece la fila actual como editable
+  }
+
+  cancelarEdicion() {
+    this.editarVehiculo = null; // Cancela la edición
+  }
+
+  guardarEdicion(vehiculo: Vehiculo) {
+    // Lógica para guardar la edición (puedes llamar a tu servicio de modificación aquí)
+    this.vS.update(vehiculo).subscribe(() => {
+      this.editarVehiculo = null; // Termina la edición
     });
   }
 }

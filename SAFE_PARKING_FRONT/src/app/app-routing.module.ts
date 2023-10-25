@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
+import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -19,6 +20,11 @@ const routes: Routes = [
   { path: 'listar_vehiculos', component: ListarVehiculosComponent },
   { path: 'registrar_vehiculos', component: CreaeditaVehiculosComponent },
   { path: 'buscar_vehiculos', component: BuscarVehiculosComponent },
+
+  {
+    path: 'registrar_licalizaciones',
+    component: CreaeditaLocalizacionesComponent,
+  },
 
   { path: 'vehiculos', component: VehiculosComponent },
   { path: 'home-condutor', component: HomeConductorComponent },

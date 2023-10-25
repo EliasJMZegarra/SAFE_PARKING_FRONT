@@ -35,6 +35,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
+import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
+import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculo
     FooterComponent,
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
+    LocalizacionesComponent,
+    CreaeditaLocalizacionesComponent,
   ],
   imports: [
     BrowserModule,

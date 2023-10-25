@@ -28,13 +28,15 @@
           </div>
         </div>
       </div>
-      <div>
+
+      <div class="form-group">
         <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">
           <h1>REGISTRAR VEHICULO</h1>
           <!-- Placa sección -->
           <mat-form-field class="example-full-width">
             <mat-label>direccion</mat-label>
             <input
+              class="rr"
               matInput
               placeholder="direccion"
               formControlName="direccion"
@@ -118,7 +120,8 @@
           </button>
         </form>
       </div>
-      <div id="map" style="height: 400px"></div>
+
+      <div id="map"></div>
     </body>
   </html>
 </div>

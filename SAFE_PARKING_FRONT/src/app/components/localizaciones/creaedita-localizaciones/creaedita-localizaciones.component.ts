@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Localizacion } from 'src/app/models/localizacion ';
 import { LocalizacionService } from 'src/app/services/localizacion.service';
 import * as L from 'leaflet';
-import { icon, Marker } from 'leaflet';
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';
@@ -57,7 +56,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
           this.lS.setList(data);
         });
       });
-      this.router.navigate(['']);
+      this.router.navigate(['listar_localizaciones']);
     } else {
       this.mensaje = 'completa todos los campos!!';
     }

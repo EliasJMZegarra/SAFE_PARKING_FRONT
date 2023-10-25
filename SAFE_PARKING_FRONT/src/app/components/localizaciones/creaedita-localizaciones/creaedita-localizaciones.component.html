@@ -20,9 +20,9 @@
         <div class="container-menu">
           <div class="cont-menu">
             <nav>
-              <a href="listar_vehiculos">Listar Vehiculos</a>
-              <a href="registrar_vehiculos">registrar Vehiculos</a>
-              <a href="buscar_vehiculos">Buscar Vehiculos</a>
+              <a href="registrar_localizaciones">Registar Localizaciones</a>
+              <a href="listar_localizaciones">Listar Localizaciones</a>
+              <a href="buscar_localizaciones">Buscar Localizaciones</a>
             </nav>
             <label for="btn-menu">✖️</label>
           </div>
@@ -31,7 +31,7 @@
 
       <div class="form-group">
         <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">
-          <h1>REGISTRAR VEHICULO</h1>
+          <h1>REGISTRAR LOCALIZACION</h1>
           <!-- Placa sección -->
           <mat-form-field class="example-full-width">
             <mat-label>direccion</mat-label>
@@ -120,8 +120,6 @@
           </button>
         </form>
       </div>
-
-      <div id="map"></div>
     </body>
   </html>
 </div>

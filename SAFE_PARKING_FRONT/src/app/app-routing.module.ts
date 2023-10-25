@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
 import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
+import { ListarLocalizacionesComponent } from './components/localizaciones/listar-localizaciones/listar-localizaciones.component';
+import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -22,8 +24,16 @@ const routes: Routes = [
   { path: 'buscar_vehiculos', component: BuscarVehiculosComponent },
 
   {
-    path: 'registrar_licalizaciones',
+    path: 'registrar_localizaciones',
     component: CreaeditaLocalizacionesComponent,
+  },
+  {
+    path: 'listar_localizaciones',
+    component: ListarLocalizacionesComponent,
+  },
+  {
+    path: 'buscar_localizaciones',
+    component: BuscarLocalizacionesComponent,
   },
 
   { path: 'vehiculos', component: VehiculosComponent },

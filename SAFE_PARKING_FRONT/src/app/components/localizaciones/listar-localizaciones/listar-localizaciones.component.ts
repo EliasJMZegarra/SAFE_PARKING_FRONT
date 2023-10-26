@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { LocalizacionService } from 'src/app/services/localizacion.service';
 import * as L from 'leaflet';
-import { Localizacion } from 'src/app/models/localizacion ';
+import { Localizacion } from 'src/app/models/localizacion';
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';

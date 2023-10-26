@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import * as L from 'leaflet';
-import { Localizacion } from 'src/app/models/localizacion ';
+import { Localizacion } from 'src/app/models/localizacion';
 import { LocalizacionService } from 'src/app/services/localizacion.service';
-
+const iconRetinaUrl = 'assets/marker-icon-2x.png';
+const iconUrl = 'assets/marker-icon.png';
+const shadowUrl = 'assets/marker-shadow.png';
 @Component({
   selector: 'app-buscar-localizaciones',
   templateUrl: './buscar-localizaciones.component.html',
@@ -40,6 +42,19 @@ export class BuscarLocalizacionesComponent implements OnInit {
   }
 
   buscar(): void {
+    //iconos personalizados
+    var iconDefault = L.icon({
+      iconRetinaUrl,
+      iconUrl,
+      shadowUrl,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      tooltipAnchor: [16, -28],
+      shadowSize: [41, 41],
+    });
+    L.Marker.prototype.options.icon = iconDefault;
+
     this.localizacion.idLocalizacion = this.idLocalizacion;
     if (this.idLocalizacion) {
       this.busquedaService

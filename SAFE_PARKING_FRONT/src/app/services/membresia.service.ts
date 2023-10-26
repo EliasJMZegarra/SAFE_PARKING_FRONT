@@ -1,40 +1,40 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Vehiculo } from '../models/vehiculo';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Membresia } from '../models/membresia';
 
 const base_url = environment.base_datos; // ruta de la base de datos
 
 @Injectable({
   providedIn: 'root',
 })
-export class VehiculoService {
-  private url = `${base_url}/vehiculos`;
-  private listaCambio = new Subject<Vehiculo[]>();
+export class MembresiaService {
+  private url = `${base_url}/membresias`;
+  private listaCambio = new Subject<Membresia[]>();
   constructor(private http: HttpClient) {}
   // Obtener todos los vehículos
   list() {
-    return this.http.get<Vehiculo[]>(`${this.url}/Listar`);
+    return this.http.get<Membresia[]>(`${this.url}/Listar`);
   }
-  // Obtener un vehículo por ID
+  // Obtener un Membresia por ID
   getById(id: number) {
-    return this.http.get<Vehiculo>(`${this.url}/ListarporID/${id}`);
+    return this.http.get<Membresia>(`${this.url}/ListarporID/${id}`);
   }
-  // Actualizar un vehículo
-  update(vehiculo: Vehiculo) {
+  // Actualizar un Membresia
+  update(vehiculo: Membresia) {
     return this.http.put(`${this.url}/Modificar`, vehiculo);
   }
-  // Eliminar un vehículo
+  // Eliminar un Membresia
   delete(id: number) {
     return this.http.delete(`${this.url}/Eliminar/${id}`);
   }
-  // Crear un nuevo vehículo
-  insert(ve: Vehiculo) {
-    return this.http.post(`${this.url}/Registrar`, ve);
+  // Crear un nuevo Membresia
+  insert(me: Membresia) {
+    return this.http.post(`${this.url}/Registrar`, me);
   }
 
-  setList(listaNueva: Vehiculo[]) {
+  setList(listaNueva: Membresia[]) {
     this.listaCambio.next(listaNueva);
   }
 

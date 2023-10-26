@@ -10,5 +10,6 @@ export class Usuario {
   imagen?: string;
   fechaNacimiento: Date = new Date(Date.now());
   telefono?: number;
-  idMembresia?: number;
+  enabled?: boolean;
+  membresia: number = 0;
 }

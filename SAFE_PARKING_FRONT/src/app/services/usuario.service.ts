@@ -10,12 +10,12 @@ const base_url = environment.base_datos;
   providedIn: 'root',
 })
 export class UsuarioService {
-  private url = `${base_url}/usuario`;
+  private url = `${base_url}/usuarios`;
   private listaCambio = new Subject<Usuario[]>();
   constructor(private http: HttpClient) {}
 
   insert(m_usuario: Usuario) {
-    const endpoint = `${base_url}/Registrar`;
+    const endpoint = this.url + `/Registrar`;
     return this.http.post<Usuario>(endpoint, m_usuario);
   }
 

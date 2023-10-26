@@ -14,15 +14,18 @@ import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculo
 import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
 import { ListarLocalizacionesComponent } from './components/localizaciones/listar-localizaciones/listar-localizaciones.component';
 import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
+import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
+import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
 
+  // vehiculos
   { path: 'listar_vehiculos', component: ListarVehiculosComponent },
   { path: 'registrar_vehiculos', component: CreaeditaVehiculosComponent },
   { path: 'buscar_vehiculos', component: BuscarVehiculosComponent },
-
+  // localizaciones
   {
     path: 'registrar_localizaciones',
     component: CreaeditaLocalizacionesComponent,
@@ -35,6 +38,11 @@ const routes: Routes = [
     path: 'buscar_localizaciones',
     component: BuscarLocalizacionesComponent,
   },
+  // membresias
+  { path: 'listar_membresias', component: ListarMembresiaComponent },
+  // usuarios
+  { path: 'registrar_usuario', component: CreaeditaUsuarioComponent },
+  // apartados
 
   { path: 'vehiculos', component: VehiculosComponent },
   { path: 'home-condutor', component: HomeConductorComponent },

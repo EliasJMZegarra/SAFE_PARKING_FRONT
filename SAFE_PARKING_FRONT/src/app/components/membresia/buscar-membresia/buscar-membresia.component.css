@@ -1,0 +1,186 @@
+.search-form {
+    background-color: #f0f0f0;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #30e298;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .form-group button {
+    padding: 10px 20px;
+    background-color: #30e298;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .membresia-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    margin: 0 auto; /* Centrar horizontalmente */
+  }
+  
+  /* Estilos para los contenedores de información */
+  .info-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para los títulos y contenido dentro de los contenedores */
+  .info-box h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #30e298;
+    margin-bottom: 2px;
+  }
+  
+  .info-box p {
+    font-size: 1em;
+    color: #000000;
+  }
+  /*Estilos para el encabezado*/
+  .encabezado {
+  
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 20px;
+    left: 350px;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  
+  }
+  
+  .container .btn-menu,
+  .logo {
+    float: left;
+    line-height: 100px;
+  }
+  
+  .container .btn-menu label {
+    color: #0f0f0f;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .logo h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+  }
+  
+  
+  .container .menu a {
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  
+  .container .menu a:hover {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+  }
+  
+  
+  /*Fin de Estilos para el encabezado*/
+  
+  /*Menù lateral*/
+  #btn-menu {
+    display: none;
+  }
+  
+  .container-menu {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+  }
+  
+  #btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+  }
+  
+  .cont-menu nav {
+    transform: translateY(15%);
+  }
+  
+  .cont-menu nav a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+  }
+  
+  .cont-menu nav a:hover {
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+  }
+  
+  .cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+  }

@@ -35,6 +35,17 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
+import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
+import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
+import { ListarLocalizacionesComponent } from './components/localizaciones/listar-localizaciones/listar-localizaciones.component';
+import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
+import { MembresiaComponent } from './components/membresia/membresia.component';
+import { CreaeditaMembresiaComponent } from './components/membresia/creaedita-membresia/creaedita-membresia.component';
+import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
+import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
+import { Localizacion } from './models/localizacion';
 
 @NgModule({
   declarations: [
@@ -50,6 +61,17 @@ import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculo
     FooterComponent,
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
+    LocalizacionesComponent,
+    CreaeditaLocalizacionesComponent,
+    ListarLocalizacionesComponent,
+    BuscarLocalizacionesComponent,
+    MembresiaComponent,
+    CreaeditaMembresiaComponent,
+    ListarMembresiaComponent,
+    BuscarMembresiaComponent,
+    UsuariosComponent,
+    CreaeditaUsuarioComponent,
+    LocalizacionesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+    <body>
+      <div>
+        <header class="encabezado">
+          <div class="btn-menu">
+            <label for="btn-menu">☰</label>
+          </div>
+        </header>
+        <input type="checkbox" id="btn-menu" />
+        <div class="encabezado-menu">
+          <div class="cont-menu">
+            <nav>
+              <a href="registrar_localizaciones">Registar Localizaciones</a>
+              <a href="listar_localizaciones">Listar Localizaciones</a>
+              <a href="buscar_localizaciones">Buscar Localizaciones</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h2>Buscar localización</h2>
+        <input
+          type="text"
+          [(ngModel)]="idLocalizacion"
+          placeholder="Ingrese el ID de la localización"
+        />
+        <button (click)="buscar()">Buscar</button>
+      </div>
+      <div id="map" style="height: 400px"></div>
+    </body>
+  </html>
+</div>
+<app-footer></app-footer>

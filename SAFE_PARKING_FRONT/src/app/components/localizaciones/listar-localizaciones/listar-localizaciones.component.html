@@ -1,0 +1,45 @@
+<div [hidden]="route.children.length !== 0">
+  <div>
+    <h2 style="text-align: center">LISTA DE LOCALIZACIONES</h2>
+  </div>
+
+  <div class="container">
+    <div class="card-container">
+      <div class="card" *ngFor="let element of dataSource.data">
+        <div class="card-header">
+          {{ element.idLocalizacion }}
+        </div>
+        <div class="card-body">
+          <p>Dirección: {{ element.direccion }}</p>
+          <p>Distrito: {{ element.distrito }}</p>
+          <p>Región: {{ element.region }}</p>
+          <p>Referencia: {{ element.referencia }}</p>
+          <p>Latitud: {{ element.latitud }}</p>
+          <p>Longitud: {{ element.longitud }}</p>
+        </div>
+        <div id="#map"></div>
+
+        <div class="card-footer">
+          <button
+            mat-icon-button
+            class="material-icons app-toolbar-menu"
+            matTooltip="Edit"
+            color="primary"
+            (click)="modificar(element)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            class="material-icons app-toolbar-menu"
+            matTooltip="Delete"
+            color="warn"
+            (click)="eliminar(element.idLocalizacion)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

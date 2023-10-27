@@ -46,7 +46,11 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { Localizacion } from './models/localizacion';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
+import { HorarioComponent } from './components/horario/horario.component';
+import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
+import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
+
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
 
 @NgModule({
   declarations: [
@@ -73,7 +77,9 @@ import { HomeAdministradorComponent } from './components/home-administrador/home
     UsuariosComponent,
     CreaeditaUsuarioComponent,
     LocalizacionesComponent,
-    HomeAdministradorComponent,
+    HorarioComponent,
+    CreaeditaHorarioComponent,
+    ListarHorarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +103,7 @@ import { HomeAdministradorComponent } from './components/home-administrador/home
     JwtModule,
     HttpClientModule,
     RouterModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

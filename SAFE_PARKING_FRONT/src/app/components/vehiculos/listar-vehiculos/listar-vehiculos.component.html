@@ -1,6 +1,9 @@
+<router-outlet></router-outlet>
 <app-navbar></app-navbar>
-<!DOCTYPE html>
-<html lang="en">
+<div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,12 +36,7 @@
     </div>
 
     <div class="container">
-      <table
-        mat-table
-        [dataSource]="dataSource"
-        class="mat-elevation-z8 custom-table"
-        matSort
-      >
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table" matSort>
         <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
@@ -47,15 +45,11 @@
           <th mat-header-cell *matHeaderCellDef>codigo</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.idVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.idVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.idVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -64,15 +58,11 @@
           <th mat-header-cell *matHeaderCellDef>placa</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.placaVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.placaVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.placaVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -81,15 +71,11 @@
           <th mat-header-cell *matHeaderCellDef>categoria</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.categoriaVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.categoriaVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.categoriaVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -98,15 +84,11 @@
           <th mat-header-cell *matHeaderCellDef>color</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.colorVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.colorVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.colorVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -115,15 +97,11 @@
           <th mat-header-cell *matHeaderCellDef>marca</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.marcaVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.marcaVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.marcaVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -132,15 +110,11 @@
           <th mat-header-cell *matHeaderCellDef>tamanio</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.tamanioVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.tamanioVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.tamanioVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
@@ -149,65 +123,38 @@
           <th mat-header-cell *matHeaderCellDef>tarjeta de propiedad</th>
           <td mat-cell *matCellDef="let element">
             <!-- Mostrar un campo de entrada cuando la fila esté en modo de edición -->
-            <input
-              *ngIf="editarVehiculo === element"
-              [(ngModel)]="element.tarjetaPropiedadVehiculo"
-              matInput
-            />
+            <input *ngIf="editarVehiculo === element" [(ngModel)]="element.tarjetaPropiedadVehiculo" matInput />
             <!-- Mostrar el valor cuando no esté en modo de edición -->
             <span *ngIf="editarVehiculo !== element">{{
               element.tarjetaPropiedadVehiculo
-            }}</span>
+              }}</span>
           </td>
         </ng-container>
 
         <ng-container matColumnDef="Modificar">
           <th mat-header-cell *matHeaderCellDef>Modificar</th>
-          <td
-            mat-cell
-            *matCellDef="let element; let i = index"
-            [formGroup]="element"
-          >
+          <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
             <!-- Si no se está editando, muestra el botón "Modificar" -->
             <ng-container *ngIf="!editarVehiculo">
-              <button
-                mat-icon-button
-                class="material-icons app-toolbar-menu save-button"
-                matTooltip="Edit"
-                color="primary"
-                (click)="modificar(element)"
-              >
+              <button mat-icon-button class="material-icons app-toolbar-menu save-button" matTooltip="Edit"
+                color="primary" (click)="modificar(element)">
                 <mat-icon>edit</mat-icon>
               </button>
 
-              <button
-                mat-icon-button
-                class="material-icons app-toolbar-menu delete-button"
-                matTooltip="Delete"
-                color="warn"
-                (click)="eliminar(element.idVehiculo)"
-              >
+              <button mat-icon-button class="material-icons app-toolbar-menu delete-button" matTooltip="Delete"
+                color="warn" (click)="eliminar(element.idVehiculo)">
                 <mat-icon>delete</mat-icon>
               </button>
             </ng-container>
             <!-- Si se está editando, muestra los botones de "Guardar" y "Cancelar" -->
             <ng-container *ngIf="editarVehiculo === element">
-              <button
-                mat-icon-button
-                class="material-icons app-toolbar-menu save-button"
-                matTooltip="Save Changes"
-                (click)="guardarEdicion(element)"
-              >
+              <button mat-icon-button class="material-icons app-toolbar-menu save-button" matTooltip="Save Changes"
+                (click)="guardarEdicion(element)">
                 <mat-icon>check_circle</mat-icon>
               </button>
 
-              <button
-                mat-icon-button
-                class="material-icons app-toolbar-menu cancel-button"
-                matTooltip="Cancel Changes"
-                color="warn"
-                (click)="cancelarEdicion()"
-              >
+              <button mat-icon-button class="material-icons app-toolbar-menu cancel-button" matTooltip="Cancel Changes"
+                color="warn" (click)="cancelarEdicion()">
                 <mat-icon>cancel</mat-icon>
               </button>
             </ng-container>
@@ -217,13 +164,11 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
-
-      <mat-paginator
-        [pageSize]="5"
-        [pageSizeOptions]="[5, 10, 25]"
-      ></mat-paginator>
+      <br>
+      <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
     </div>
-    <app-footer></app-footer>
   </body>
-</html>
-<router-outlet></router-outlet>
+
+  </html>
+</div>
+<app-footer></app-footer>

@@ -44,14 +44,12 @@ import { ListarMembresiaComponent } from './components/membresia/listar-membresi
 import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
-import { Localizacion } from './models/localizacion';
 import { AppRoutingModule } from './app-routing.module';
 import { HorarioComponent } from './components/horario/horario.component';
 import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
 import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
-
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
-
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
+import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,10 +58,10 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario
     SignInComponent,
     VehiculosComponent,
     HomeConductorComponent,
+    HomeAdministradorComponent,
     ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
-    FooterComponent,
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
     LocalizacionesComponent,
@@ -76,6 +74,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario
     BuscarMembresiaComponent,
     UsuariosComponent,
     CreaeditaUsuarioComponent,
+    FooterComponent,
     LocalizacionesComponent,
     HorarioComponent,
     CreaeditaHorarioComponent,
@@ -103,7 +102,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario
     JwtModule,
     HttpClientModule,
     RouterModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

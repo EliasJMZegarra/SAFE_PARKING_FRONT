@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
-<app-navbar></app-navbar>
 <div [hidden]="route.children.length !== 0">
+  <app-navbar></app-navbar>
+
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -21,9 +22,7 @@
         <div class="container-menu">
           <div class="cont-menu">
             <nav>
-              <a href="listar_membresia">Listar Membresia</a>
-              <a href="registrar_membresia">registrar Membresia</a>
-              <a href="buscar_membresia">Buscar Membresia</a>
+              <a href="membresia">Membresias</a>
             </nav>
             <label for="btn-menu">✖️</label>
           </div>
@@ -35,7 +34,11 @@
       <div class="search-form">
         <div class="form-group">
           <label for="membresiaIdInput">Ingrese el ID de la membresia:</label>
-          <input id="membresiaIdInput" type="number" [(ngModel)]="idMembresia" />
+          <input
+            id="membresiaIdInput"
+            type="number"
+            [(ngModel)]="idMembresia"
+          />
           <button (click)="buscar()">Buscar</button>
         </div>
         <hr />

@@ -7,8 +7,9 @@
   </head>
   <body>
     <router-outlet></router-outlet>
-    <app-navbar></app-navbar>
     <div [hidden]="route.children.length !== 0">
+      <app-navbar></app-navbar>
+
       <div class="titulo">
         <h2>Registrar</h2>
       </div>

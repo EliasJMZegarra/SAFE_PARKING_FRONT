@@ -1,0 +1,79 @@
+.example-form{
+  display: flex;
+  background-color: rgb(56, 253, 210);
+}
+.container_izquierdo {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.container_derecho {
+  float: right;
+  width: 50%;
+  padding: 5px;
+}
+
+.fila_de_2 {
+  clear: both;
+  display: flex;
+
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 5px;
+  background-color: #3a3a3a;
+}
+
+mat-label {
+  font-size: 14px;
+}
+
+mat-input {
+  font-size: 14px;
+  padding: 10px;
+}
+
+mat-error {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+
+mat-select {
+  width: 100%;
+}
+
+mat-option {
+  font-size: 14px;
+}
+
+mat-raised-button {
+  background-color: #008000;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+p {
+  font-size: 14px;
+}
+/* Centra el formulario en la página */
+.example-form {
+  align-self: center;
+}
+
+/* Agrega un borde y un relleno al formulario */
+.example-form {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Agrega un espacio entre los elementos del formulario */
+mat-form-field,
+mat-select,
+mat-raised-button {
+  margin-bottom: 10px;
+}
+
+

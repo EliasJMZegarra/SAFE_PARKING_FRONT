@@ -1,0 +1,126 @@
+<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+    <body>
+      <div>
+        <header class="encabezado">
+          <div class="btn-menu">
+            <label for="btn-menu">☰</label>
+          </div>
+        </header>
+
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+          <div class="cont-menu">
+            <nav>
+              <a href="registrar_localizaciones">Registar Localizaciones</a>
+              <a href="listar_localizaciones">Listar Localizaciones</a>
+              <a href="buscar_localizaciones">Buscar Localizaciones</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">
+          <h1>REGISTRAR LOCALIZACION</h1>
+          <!-- Placa sección -->
+          <mat-form-field class="example-full-width">
+            <mat-label>direccion</mat-label>
+            <input
+              class="rr"
+              matInput
+              placeholder="direccion"
+              formControlName="direccion"
+            />
+            <mat-error
+              *ngIf="obtenerConntrolCampo('direccion')?.errors?.['required']"
+            >
+              el campo es obligatoria.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- distrito sección -->
+          <mat-form-field class="example-full-width">
+            <mat-label>distrito</mat-label>
+            <input matInput placeholder="distrito" formControlName="distrito" />
+            <mat-error
+              *ngIf="obtenerConntrolCampo('distrito')?.errors?.['required']"
+            >
+              el campo es obligatoria.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- distrito sección -->
+          <mat-form-field class="example-full-width">
+            <mat-label>region</mat-label>
+            <input matInput placeholder="region" formControlName="region" />
+            <mat-error
+              *ngIf="obtenerConntrolCampo('region')?.errors?.['required']"
+            >
+              el campo es obligatoria.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- referencia sección -->
+          <mat-form-field class="example-full-width">
+            <mat-label>referencia</mat-label>
+            <input
+              matInput
+              placeholder="referencia"
+              formControlName="referencia"
+            />
+            <mat-error
+              *ngIf="obtenerConntrolCampo('referencia')?.errors?.['required']"
+            >
+              el campo es obligatoria.
+            </mat-error>
+          </mat-form-field>
+
+          <div>
+            <h1>SELECCIONA TU HUBICACION EN EL MAPA</h1>
+            <!-- referencia sección -->
+            <mat-form-field class="example-full-width">
+              <mat-label>latitud</mat-label>
+              <input matInput placeholder="latitud" formControlName="latitud" />
+              <mat-error
+                *ngIf="obtenerConntrolCampo('latitud')?.errors?.['required']"
+              >
+                el campo es obligatoria.
+              </mat-error>
+            </mat-form-field>
+            <!-- referencia sección -->
+            <mat-form-field class="example-full-width">
+              <mat-label>longitud</mat-label>
+              <input
+                matInput
+                placeholder="longitud"
+                formControlName="longitud"
+              />
+              <mat-error
+                *ngIf="obtenerConntrolCampo('longitud')?.errors?.['required']"
+              >
+                el campo es obligatoria.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div id="map" style="height: 400px"></div>
+          <button mat-raised-button color="primary">REGISTRAR</button>
+          <button mat-raised-button color="warn" routerLink="/listar">
+            CANCELAR
+          </button>
+        </form>
+      </div>
+    </body>
+  </html>
+</div>
+<app-footer></app-footer>

@@ -29,7 +29,7 @@
         </div>
       </div>
       <div>
-        <form [formGroup]="form" (submit)="registrar()" class="example-form">
+        <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">
           <h1>REGISTRAR VEHICULO</h1>
           <!-- Placa sección -->
           <mat-form-field class="example-full-width">
@@ -125,7 +125,6 @@
           <button mat-raised-button color="warn" routerLink="/listar">
             CANCELAR
           </button>
-          <button mat-raised-button color="primary">MODIFICAR</button>
         </form>
       </div>
     </body>

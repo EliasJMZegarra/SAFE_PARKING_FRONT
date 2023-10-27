@@ -1,1 +1,93 @@
-<p>creaedita-membresia works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div><h2>Registrar</h2></div>
+    <div>
+        <form [formGroup]="form" (submit)=" registrar()" class="example-form">
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tipo de membresia</mat-label>
+                <input matInput placeholder="Tipo de membresia" formControlName="tipoMembresia">
+                <mat-error
+                *ngIf="obtenerControlCampo('tipoMembresia')?.errors?.['required']"
+                 > El nombre es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <!--
+            <mat-form-field>
+                <mat-label>Favorite food</mat-label>
+                <mat-select formControlName="typeDessert">
+                    <mat-option *ngFor="let t of tipos" [value]="t.value">
+                        {{t.viewValue}}
+                    </mat-option>
+                </mat-select>
+                <mat-error
+                *ngIf="obtenerControlCampo('typeDessert')?.errors?.['required']"
+                 > El nombre es obligatorio.
+                </mat-error>
+            </mat-form-field> PARA HACER EL SELECT-->
+            <br>
+            <mat-form-field>
+                <mat-label>Fecha de Inicio</mat-label>
+                <input matInput 
+                [matDatepicker]="pickerInicio" 
+                placeholder="Fecha de inicio"
+                formControlName="fechaInicio"
+                [min]="minFecha"
+                >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle 
+                matIconSuffix 
+                [for]="pickerInicio"></mat-datepicker-toggle>
+                <mat-datepicker #pickerInicio></mat-datepicker>
+                <mat-error
+                *ngIf="obtenerControlCampo('fechaInicio')?.errors?.['required']"
+                 > La fecha de inicio es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Fecha de expiración</mat-label>
+                <input matInput 
+                [matDatepicker]="pickerExpiracion" 
+                placeholder="Fecha de expiración"
+                formControlName="fechaFin"
+                [min]="minFecha"
+                >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle 
+                matIconSuffix 
+                [for]="pickerExpiracion"></mat-datepicker-toggle>
+                <mat-datepicker #pickerExpiracion></mat-datepicker>
+                <mat-error
+                *ngIf="obtenerControlCampo('fechaFin')?.errors?.['required']"
+                 > La fecha de expiración es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Precio" formControlName="precio">
+                <mat-error
+                *ngIf="obtenerControlCampo('precio')?.errors?.['required']"
+                 > El nombre es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <button mat-button color="primary">Registrar</button>
+            
+
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -16,6 +16,8 @@ import { ListarLocalizacionesComponent } from './components/localizaciones/lista
 import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
 import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
+import { CreaeditaMembresiaComponent } from './components/membresia/creaedita-membresia/creaedita-membresia.component';
+import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -40,6 +42,8 @@ const routes: Routes = [
   },
   // membresias
   { path: 'listar_membresias', component: ListarMembresiaComponent },
+  { path: 'registrar_membresias', component: CreaeditaMembresiaComponent },
+  { path: 'buscar_membresias', component: BuscarMembresiaComponent },
   // usuarios
   {
     path: 'registrar_usuario/:id',

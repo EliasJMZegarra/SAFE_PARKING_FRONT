@@ -1,7 +1,22 @@
-.example-form{
+.titulo_principal{
+  text-align: center;
+  padding: 10px;
+}
+.container{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Centra verticalmente en la página */
+}
+form{
+  width: 50%;
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 10px;
   background-color: rgb(56, 253, 210);
 }
+
 .container_izquierdo {
   float: left;
   width: 50%;
@@ -23,7 +38,6 @@
 mat-form-field {
   width: 100%;
   margin: 5px;
-  background-color: #3a3a3a;
 }
 
 mat-label {
@@ -57,23 +71,6 @@ mat-raised-button {
 
 p {
   font-size: 14px;
-}
-/* Centra el formulario en la página */
-.example-form {
-  align-self: center;
-}
-
-/* Agrega un borde y un relleno al formulario */
-.example-form {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-/* Agrega un espacio entre los elementos del formulario */
-mat-form-field,
-mat-select,
-mat-raised-button {
-  margin-bottom: 10px;
 }
 
 

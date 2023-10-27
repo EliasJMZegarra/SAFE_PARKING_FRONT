@@ -46,6 +46,11 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { Localizacion } from './models/localizacion';
 import { AppRoutingModule } from './app-routing.module';
+import { HorarioComponent } from './components/horario/horario.component';
+import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
+import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
+
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
 
 @NgModule({
   declarations: [
@@ -72,6 +77,9 @@ import { AppRoutingModule } from './app-routing.module';
     UsuariosComponent,
     CreaeditaUsuarioComponent,
     LocalizacionesComponent,
+    HorarioComponent,
+    CreaeditaHorarioComponent,
+    ListarHorarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +103,7 @@ import { AppRoutingModule } from './app-routing.module';
     JwtModule,
     HttpClientModule,
     RouterModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

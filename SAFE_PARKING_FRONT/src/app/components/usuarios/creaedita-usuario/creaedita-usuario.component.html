@@ -1,14 +1,11 @@
 <!-- creaedita-usuario.component.html -->
+<div class="titulo_principal">
+  <h2>Registro de Usuario</h2>
+</div>
 
-<h2>Registro de Usuario</h2>
 
 <div class="container" style="text-align: center">
-  <form
-    [formGroup]="form"
-    (submit)="registrar()"
-    class="example-form"
-    color="accent"
-  >
+  <form [formGroup]="form" (submit)="registrar()" class="example-form" color="accent">
     <div class="container_izquierdo">
       <mat-form-field class="example-full-width" color="accent">
         <mat-label>nombre</mat-label>
@@ -22,9 +19,7 @@
         <mat-form-field class="example-full-width" color="accent">
           <mat-label>correo</mat-label>
           <input matInput placeholder="correo" formControlName="correo" />
-          <mat-error
-            *ngIf="obtenerControlCampo('correo')?.errors?.['required']"
-          >
+          <mat-error *ngIf="obtenerControlCampo('correo')?.errors?.['required']">
             El correo es obligatorio.
           </mat-error>
         </mat-form-field>
@@ -32,9 +27,7 @@
         <mat-form-field class="example-full-width" color="accent">
           <mat-label>telefono</mat-label>
           <input matInput placeholder="telefono" formControlName="telefono" />
-          <mat-error
-            *ngIf="obtenerControlCampo('telefono')?.errors?.['required']"
-          >
+          <mat-error *ngIf="obtenerControlCampo('telefono')?.errors?.['required']">
             El telefono es obligatorio.
           </mat-error>
         </mat-form-field>
@@ -42,14 +35,8 @@
 
       <mat-form-field class="example-full-width" color="accent">
         <mat-label>id_membresia</mat-label>
-        <input
-          matInput
-          placeholder="id_membresia"
-          formControlName="id_membresia"
-        />
-        <mat-error
-          *ngIf="obtenerControlCampo('id_membresia')?.errors?.['required']"
-        >
+        <input matInput placeholder="id_membresia" formControlName="id_membresia" />
+        <mat-error *ngIf="obtenerControlCampo('id_membresia')?.errors?.['required']">
           El membresia es obligatorio.
         </mat-error>
       </mat-form-field>
@@ -57,9 +44,7 @@
       <mat-form-field class="example-full-width" color="accent">
         <mat-label>username</mat-label>
         <input matInput placeholder="username" formControlName="username" />
-        <mat-error
-          *ngIf="obtenerControlCampo('username')?.errors?.['required']"
-        >
+        <mat-error *ngIf="obtenerControlCampo('username')?.errors?.['required']">
           El username es obligatorio.
         </mat-error>
       </mat-form-field>
@@ -81,9 +66,7 @@
       <mat-form-field class="example-full-width" color="accent">
         <mat-label>apellido</mat-label>
         <input matInput placeholder="apellido" formControlName="apellido" />
-        <mat-error
-          *ngIf="obtenerControlCampo('apellido')?.errors?.['required']"
-        >
+        <mat-error *ngIf="obtenerControlCampo('apellido')?.errors?.['required']">
           El apellido es obligatorio.
         </mat-error>
       </mat-form-field>
@@ -104,43 +87,25 @@
               {{ p.viewValue }}
             </mat-option>
           </mat-select>
-          <mat-error
-            *ngIf="obtenerControlCampo('genero')?.errors?.['required']"
-          >
+          <mat-error *ngIf="obtenerControlCampo('genero')?.errors?.['required']">
             El genero es obligatorio.
           </mat-error>
         </mat-form-field>
       </div>
-      <mat-form-field
-        appearance="fill"
-        class="example-full-width"
-        color="accent"
-      >
-        <input
-          matInput
-          placeholder="Ingrese fecha"
-          [matDatepicker]="picker"
-          formControlName="fechaNacimiento"
-          [max]="maxFecha"
-        />
+      <mat-form-field appearance="fill" class="example-full-width" color="accent">
+        <input matInput placeholder="Ingrese fecha" [matDatepicker]="picker" formControlName="fechaNacimiento"
+          [max]="maxFecha" />
         <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-        <mat-error
-          *ngIf="obtenerControlCampo('fechaNacimiento')?.errors?.['required']"
-        >
+        <mat-error *ngIf="obtenerControlCampo('fechaNacimiento')?.errors?.['required']">
           La fecha de creacion es obligatoria.
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width" color="accent">
         <mat-label>password</mat-label>
         <input matInput placeholder="password" formControlName="password" />
-        <mat-error
-          *ngIf="obtenerControlCampo('password')?.errors?.['required']"
-        >
+        <mat-error *ngIf="obtenerControlCampo('password')?.errors?.['required']">
           El password es obligatorio.
         </mat-error>
       </mat-form-field>
@@ -155,5 +120,6 @@
     </div>
     <p>{{ mensaje }}</p>
   </form>
+  <br>
   <button mat-raised-button color="accent">registrar</button>
 </div>

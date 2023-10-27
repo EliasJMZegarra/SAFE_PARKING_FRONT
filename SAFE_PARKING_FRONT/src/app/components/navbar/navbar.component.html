@@ -2,29 +2,29 @@
 <div [hidden]="route.children.length !== 0">
   <!DOCTYPE html>
   <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-    </head>
-    <body>
-      <mat-toolbar color="primary" style="background-color: black">
-        <img class="logo" src="/assets/image/Logo_verde.png" alt="logo" />
-        <span>Safe Parking</span>
-        <div class="spacer"></div>
-        <button mat-button routerLink="/home">Home</button>
-        <button mat-button routerLink="/home-arrendador">
-          Portal Arrendador
-        </button>
-        <button mat-button routerLink="/home-condutor">Portal Conductor</button>
-        <button mat-button routerLink="/listar_membresias">Membresias</button>
-        <button mat-button routerLink="/registrar_membresias">R_Membresias</button>
-        <button mat-button routerLink="/buscar_membresias">B_Membresias</button>
-        <button mat-button routerLink="/sign-in">Sign In</button>
-        <button mat-button routerLink="/sign-up" class="boton-verde-esmeralda">
-          Sign Up
-        </button>
-      </mat-toolbar>
-    </body>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <mat-toolbar color="primary" style="background-color:#242323">
+      <img class="logo" src="/assets/image/Logo_verde.png" alt="logo" />
+      <span>Safe Parking</span>
+      <div class="spacer"></div>
+      <button mat-button routerLink="/home">Home</button>
+      <button mat-button routerLink="/home-arrendador"> Portal Arrendador </button>
+      <button mat-button routerLink="/home-condutor">Portal Conductor</button>
+      <button mat-button routerLink="/listar_membresias">Membresias</button>
+      <button mat-button routerLink="/registrar_membresias">R_Membresias</button>
+      <button mat-button routerLink="/buscar_membresias">B_Membresias</button>
+      <button mat-button routerLink="/listar_horario">Horarios</button>
+      <button mat-button routerLink="/sign-in">Sign In</button>
+      <button mat-button routerLink="/sign-up" class="boton-verde-esmeralda"> Sign Up </button>
+    </mat-toolbar>
+  </body>
+
   </html>
 </div>

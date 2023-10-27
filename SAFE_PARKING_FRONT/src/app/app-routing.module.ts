@@ -18,6 +18,8 @@ import { ListarMembresiaComponent } from './components/membresia/listar-membresi
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { CreaeditaMembresiaComponent } from './components/membresia/creaedita-membresia/creaedita-membresia.component';
 import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
+import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
+import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -50,6 +52,14 @@ const routes: Routes = [
     component: CreaeditaUsuarioComponent,
   },
 
+  //Horarios
+  {
+    path: 'listar_horario', component: ListarHorarioComponent, children: [
+      { path: 'edicion/:id', component: CreaeditaHorarioComponent },
+      { path: 'registrar_horario', component: CreaeditaHorarioComponent }
+    ]
+  },
+
   // apartados
 
   { path: 'vehiculos', component: VehiculosComponent },
@@ -64,4 +74,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

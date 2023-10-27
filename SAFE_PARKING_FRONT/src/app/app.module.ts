@@ -46,6 +46,7 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { Localizacion } from './models/localizacion';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { AppRoutingModule } from './app-routing.module';
     UsuariosComponent,
     CreaeditaUsuarioComponent,
     LocalizacionesComponent,
+    HomeAdministradorComponent,
   ],
   imports: [
     BrowserModule,

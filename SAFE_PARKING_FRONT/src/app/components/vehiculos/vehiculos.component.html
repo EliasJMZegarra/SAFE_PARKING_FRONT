@@ -1,13 +1,10 @@
-<router-outlet></router-outlet>
-<app-navbar></app-navbar>
 <div [hidden]="route.children.length !== 0">
+  <app-navbar></app-navbar>
   <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      <link rel="stylesheet" href="vehiculos.component.css" />
       <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -23,15 +20,59 @@
     </head>
 
     <body>
+      <div>
+        <header class="encabezado">
+          <div class="btn-menu">
+            <label for="btn-menu">☰</label>
+          </div>
+        </header>
+        <input type="checkbox" id="btn-menu" />
+        <div class="encabezado-menu">
+          <div class="cont-menu">
+            <nav>
+              <a href="vehiculos">Vehiculos</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
+          </div>
+        </div>
+      </div>
       <div class="content">
+        <div class="textoPrincipal">
+          <h1>VEHICULOS</h1>
+          <p>Aquí podrás gestionar tus propiedades y mucho más.</p>
+        </div>
         <nav>
-          <ul>
-            <li><a href="listar_vehiculos">Listar vehículos</a></li>
-            <li><a href="registrar_vehiculos">Registrar vehículo</a></li>
-            <li><a href="buscar_vehiculos">Buscar vehículo</a></li>
-          </ul>
+          <div class="button-list">
+            <button class="listar">
+              <img
+                src="https://como.help/uploads/2019/2/eb35b60828f6013ed1584d05fb1d4496e077ebd01fac104490f3c47fa3e8bdbc_1280_large.jpg"
+                alt="Description of the image"
+              />
+              <a routerLink="/vehiculos/listar_vehiculos">Listar Vehiculos</a>
+            </button>
+
+            <button class="listar">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2422/2422601.png"
+                alt="Description of the image"
+              />
+              <a routerLink="/vehiculos/registrar_vehiculos"
+                >Registrar Vehiculos</a
+              >
+            </button>
+
+            <button class="listar">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/011/413/568/non_2x/observation-or-examination-curiosity-to-discover-secret-search-or-analyze-information-investigate-or-research-concept-curious-businessman-holding-magnifying-glass-observe-data-with-question-mark-vector.jpg"
+                alt="Description of the image"
+              />
+              <a routerLink="/vehiculos/buscar_vehiculos">Buscar Vehiculos</a>
+            </button>
+          </div>
         </nav>
       </div>
+      <app-footer></app-footer>
     </body>
   </html>
 </div>
+<router-outlet></router-outlet>

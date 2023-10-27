@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
 <app-navbar></app-navbar>
 <div [hidden]="route.children.length !== 0">
+  <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -30,8 +31,16 @@
         <div class="encabezado-menu">
           <div class="cont-menu">
             <nav>
-              <a href="vehiculos">Vehiculos</a>
+              <h2 style="color: aliceblue">SECCION MEMBRESIAS</h2>
+              <a href="registrar_membresias">Registar Membresias</a>
+              <a href="listar_membresias">Listar Membresias</a>
+              <a href="buscar_membresias">Buscar Membresias</a>
+              <h2 style="color: aliceblue">SECCION Localizaciones</h2>
+              <a href="registrar_localizaciones">Registar Localizaciones</a>
+              <a href="listar_localizaciones">Listar Localizaciones</a>
+              <a href="buscar_localizaciones">Buscar Localizaciones</a>
             </nav>
+
             <label for="btn-menu">✖️</label>
           </div>
         </div>
@@ -39,7 +48,7 @@
 
       <div class="contenido-principal">
         <div class="textoPrincipal">
-          <h1>Bienvenido al Portal Conductor</h1>
+          <h1>Bienvenido al Portal ADMINISTRADOR</h1>
           <p>Aquí podrás gestionar tus propiedades y mucho más.</p>
         </div>
 
@@ -52,10 +61,10 @@
           <div class="features">
             <div class="feature">
               <img
-                src="https://img.freepik.com/foto-gratis/fondo-minimalista-abstracto-piso_23-2149207752.jpg?w=1380&t=st=1697996918~exp=1697997518~hmac=7534474c72e627b2b1d9d3acc6d0dcee738d8b63b90eae66db612ac4b3afce4d"
+                src="https://img.freepik.com/foto-gratis/vista-3d-mapa_23-2150471680.jpg?w=900&t=st=1698021398~exp=1698021998~hmac=0ae3464bd1e66484fbdb33c7cb121a31d27ba98d7fec07a908d2a85baf2362af"
                 alt="Imagen 1"
               />
-              <h3>Publica tus propiedades</h3>
+              <h3>Encuentra tu estacionamiento más cercano</h3>
               <p>
                 Publica tus propiedades de manera sencilla y llega a un amplio
                 público interesado en el arrendamiento.

@@ -41,7 +41,11 @@ const routes: Routes = [
   // membresias
   { path: 'listar_membresias', component: ListarMembresiaComponent },
   // usuarios
-  { path: 'registrar_usuario', component: CreaeditaUsuarioComponent },
+  {
+    path: 'registrar_usuario/:id',
+    component: CreaeditaUsuarioComponent,
+  },
+
   // apartados
 
   { path: 'vehiculos', component: VehiculosComponent },

@@ -12,10 +12,12 @@ const base_url = environment.base_datos;
 export class UsuarioService {
   private url = `${base_url}/usuarios`;
   private listaCambio = new Subject<Usuario[]>();
+
   constructor(private http: HttpClient) {}
 
   insert(m_usuario: Usuario) {
     const endpoint = this.url + `/Registrar`;
+    console.log(m_usuario);
     return this.http.post<Usuario>(endpoint, m_usuario);
   }
 
@@ -41,5 +43,11 @@ export class UsuarioService {
   eliminar(id: number) {
     const endpoint = `${base_url}/Eliminar/${id}`;
     return this.http.delete<Usuario>(endpoint);
+  }
+  uploadImage(file: File) {
+    // TODO: Implement this function to upload the image to a server.
+    return new Promise((resolve, reject) => {
+      resolve('');
+    });
   }
 }

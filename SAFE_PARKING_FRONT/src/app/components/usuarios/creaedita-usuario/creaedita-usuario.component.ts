@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import * as moment from 'moment';
@@ -17,9 +17,10 @@ import * as moment from 'moment';
 })
 export class CreaeditaUsuarioComponent implements OnInit {
   form: FormGroup = new FormGroup({});
+
   usuario: Usuario = new Usuario();
-  IDmembresias: number = 0;
   mensaje: String = '';
+  membershipId: number | null = null;
   maxFecha: Date = moment().add(-1, 'days').toDate();
   generos: { value: string; viewValue: string }[] = [
     { value: 'Hombre', viewValue: 'Hombre' },
@@ -30,6 +31,7 @@ export class CreaeditaUsuarioComponent implements OnInit {
     { value: 'true', viewValue: 'Activo' },
     { value: 'false', viewValue: 'NoActivo' },
   ];
+
   constructor(
     private uS: UsuarioService,
     private activatedRoute: ActivatedRoute,
@@ -38,6 +40,10 @@ export class CreaeditaUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      this.membershipId = parseInt(params.get('id') ?? '1');
+    });
+
     this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -49,10 +55,14 @@ export class CreaeditaUsuarioComponent implements OnInit {
       imagen: ['', Validators.required],
       fechaNacimiento: ['', [Validators.required]],
       telefono: ['', [Validators.required]],
-      membresia: ['', [Validators.required]],
+      id_membresia: [
+        this.membershipId,
+        [Validators.required, Validators.min(1), Validators.max(2)],
+      ],
       enabled: ['', [Validators.required]],
     });
   }
+
   registrar() {
     if (this.form.valid) {
       this.usuario.nombre = this.form.value.nombre;
@@ -61,12 +71,12 @@ export class CreaeditaUsuarioComponent implements OnInit {
       this.usuario.username = this.form.value.username;
       this.usuario.password = this.form.value.password;
       this.usuario.genero = this.form.value.genero;
-      this.usuario.dni = this.form.value.dni;
+      this.usuario.dni = parseInt(this.form.value.dni);
       this.usuario.imagen = this.form.value.imagen;
       this.usuario.fechaNacimiento = this.form.value.fechaNacimiento;
       this.usuario.telefono = this.form.value.telefono;
       this.usuario.enabled = this.form.value.enabled;
-      this.usuario.membresia = this.form.value.membresia;
+      this.usuario.id_membresia = this.form.value.id_membresia;
 
       this.uS.insert(this.usuario).subscribe((data) => {
         this.uS.list().subscribe((data) => {

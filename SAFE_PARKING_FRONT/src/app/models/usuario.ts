@@ -11,5 +11,5 @@ export class Usuario {
   fechaNacimiento: Date = new Date(Date.now());
   telefono?: number;
   enabled?: boolean;
-  membresia: number = 0;
+  id_membresia: number = 0;
 }

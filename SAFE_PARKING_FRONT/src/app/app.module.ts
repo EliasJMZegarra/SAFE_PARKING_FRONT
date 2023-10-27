@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -46,6 +45,7 @@ import { BuscarMembresiaComponent } from './components/membresia/buscar-membresi
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { Localizacion } from './models/localizacion';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [

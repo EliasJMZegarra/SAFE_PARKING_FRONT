@@ -43,8 +43,6 @@ export class ListarLocalizacionesComponent implements OnInit {
     this.localizacionService.list().subscribe(
       (data) => {
         this.dataSource.data = data;
-        this.initializeMap();
-
         // Initialize the map after loading data
       },
       (error) => {
@@ -54,38 +52,6 @@ export class ListarLocalizacionesComponent implements OnInit {
     );
   }
 
-  initializeMap() {
-    //iconos personalizados
-    var iconDefault = L.icon({
-      iconRetinaUrl,
-      iconUrl,
-      shadowUrl,
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      tooltipAnchor: [16, -28],
-      shadowSize: [41, 41],
-    });
-    L.Marker.prototype.options.icon = iconDefault;
-
-    this.map = L.map('map').setView([-12.04318, -77.02824], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
-      this.map
-    );
-
-    // Escuchar el evento 'click' en el mapa y agregar un marcador
-    this.map.on('click', (e) => {
-      if (this.marker) {
-        // Si ya hay un marcador, quitarlo del mapa
-        this.map.removeLayer(this.marker);
-      }
-      this.addMarker(e.latlng);
-    });
-  }
-  addMarker(latlng: L.LatLng) {
-    // Agregar el nuevo marcador en la posición del clic
-    this.marker = L.marker(latlng).addTo(this.map);
-  }
   initializeMapForLocation(element: Localizacion): void {
     const mapId = `map_${element.idLocalizacion}`;
     const mapElement = document.getElementById(mapId);

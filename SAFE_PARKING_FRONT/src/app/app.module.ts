@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -45,8 +44,12 @@ import { ListarMembresiaComponent } from './components/membresia/listar-membresi
 import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
-import { Localizacion } from './models/localizacion';
-
+import { AppRoutingModule } from './app-routing.module';
+import { HorarioComponent } from './components/horario/horario.component';
+import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
+import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
+import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,10 +58,10 @@ import { Localizacion } from './models/localizacion';
     SignInComponent,
     VehiculosComponent,
     HomeConductorComponent,
+    HomeAdministradorComponent,
     ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
-    FooterComponent,
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
     LocalizacionesComponent,
@@ -71,7 +74,11 @@ import { Localizacion } from './models/localizacion';
     BuscarMembresiaComponent,
     UsuariosComponent,
     CreaeditaUsuarioComponent,
+    FooterComponent,
     LocalizacionesComponent,
+    HorarioComponent,
+    CreaeditaHorarioComponent,
+    ListarHorarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +102,7 @@ import { Localizacion } from './models/localizacion';
     JwtModule,
     HttpClientModule,
     RouterModule,
+    NgxMaterialTimepickerModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

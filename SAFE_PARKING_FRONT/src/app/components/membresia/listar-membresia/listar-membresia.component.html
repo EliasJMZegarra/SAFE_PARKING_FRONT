@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
-<app-navbar></app-navbar>
 <div [hidden]="route.children.length !== 0">
+  <app-navbar></app-navbar>
+
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -45,4 +46,5 @@
       </div>
     </body>
   </html>
+  <app-footer></app-footer>
 </div>

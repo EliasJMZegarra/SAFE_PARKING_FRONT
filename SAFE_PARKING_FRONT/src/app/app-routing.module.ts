@@ -24,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
 import { NgModule } from '@angular/core';
+import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -45,6 +46,14 @@ const routes: Routes = [
       {
         path: 'buscar_localizaciones',
         component: BuscarLocalizacionesComponent,
+      },
+      {
+        path: 'modificar_localizaciones',
+        component: ModificarLocalizacionesComponent,
+      },
+      {
+        path: 'modificar_localizaciones/ediciones/:id',
+        component: CreaeditaLocalizacionesComponent,
       },
     ],
   },

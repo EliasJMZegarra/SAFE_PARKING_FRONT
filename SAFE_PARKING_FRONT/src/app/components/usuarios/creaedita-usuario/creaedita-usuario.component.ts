@@ -54,12 +54,12 @@ export class CreaeditaUsuarioComponent implements OnInit {
       dni: ['', Validators.required],
       imagen: ['', Validators.required],
       fechaNacimiento: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
-      id_membresia: [
+      telefono: ['', Validators.required],
+      idMembresia: [
         this.membershipId,
-        [Validators.required, Validators.min(1), Validators.max(2)],
+        [Validators.required, Validators.min(1)],
       ],
-      enabled: ['', [Validators.required]],
+      enabled: ['', Validators.required],
     });
   }
 
@@ -76,13 +76,14 @@ export class CreaeditaUsuarioComponent implements OnInit {
       this.usuario.fechaNacimiento = this.form.value.fechaNacimiento;
       this.usuario.telefono = this.form.value.telefono;
       this.usuario.enabled = this.form.value.enabled;
-      this.usuario.id_membresia = this.form.value.id_membresia;
+      this.usuario.idMembresia = this.form.value.idMembresia;
 
       this.uS.insert(this.usuario).subscribe((data) => {
         this.uS.list().subscribe((data) => {
           this.uS.setList(data);
         });
       });
+
       this.router.navigate(['']);
     } else {
       this.mensaje = 'completa todos los campos!!';

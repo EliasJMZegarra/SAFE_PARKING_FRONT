@@ -50,6 +50,7 @@ import { CreaeditaHorarioComponent } from './components/horario/creaedita-horari
 import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
 import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
+import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { HomeAdministradorComponent } from './components/home-administrador/home
     HorarioComponent,
     CreaeditaHorarioComponent,
     ListarHorarioComponent,
+    ModificarLocalizacionesComponent,
   ],
   imports: [
     BrowserModule,

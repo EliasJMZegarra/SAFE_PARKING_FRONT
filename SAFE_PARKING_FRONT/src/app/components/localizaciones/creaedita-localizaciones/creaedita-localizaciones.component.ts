@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
+  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LocalizacionService } from 'src/app/services/localizacion.service';
 import * as L from 'leaflet';
 import { Localizacion } from 'src/app/models/localizacion';
@@ -23,6 +24,8 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
   mensaje: String = '';
   map!: L.Map;
   marker: L.Marker | null = null;
+  id: number = 0;
+  edicion: boolean = false;
 
   constructor(
     private lS: LocalizacionService,
@@ -32,7 +35,13 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    });
     this.form = this.formBuilder.group({
+      idDessert: [''],
       direccion: ['', Validators.required],
       distrito: ['', Validators.required],
       region: ['', Validators.required],
@@ -44,6 +53,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
   }
   registrar() {
     if (this.form.valid) {
+      this.localizacion.idLocalizacion = this.form.value.idLocalizacion;
       this.localizacion.direccion = this.form.value.direccion;
       this.localizacion.distrito = this.form.value.distrito;
       this.localizacion.region = this.form.value.region;
@@ -51,24 +61,24 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
       this.localizacion.latitud = this.form.value.latitud;
       this.localizacion.longitud = this.form.value.longitud;
 
-      this.lS.insert(this.localizacion).subscribe((data) => {
-        this.lS.list().subscribe((data) => {
-          this.lS.setList(data);
+      if (this.edicion) {
+        this.lS.update(this.localizacion).subscribe(() => {
+          this.lS.list().subscribe((data) => {
+            this.lS.setList(data);
+          });
         });
-      });
-      this.router.navigate(['listar_localizaciones']);
+      } else {
+        this.lS.insert(this.localizacion).subscribe((data) => {
+          this.lS.list().subscribe((data) => {
+            this.lS.setList(data);
+          });
+        });
+      }
+      this.router.navigate(['modificar_localizaciones']);
     } else {
-      this.mensaje = 'completa todos los campos!!';
+      this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
   }
-  obtenerConntrolCampo(nombreCampo: string): AbstractControl {
-    const control = this.form.get(nombreCampo);
-    if (!control) {
-      throw new Error(`control no encontrado por el campo $(nombreCampo)`);
-    }
-    return control;
-  }
-
   initializeMap() {
     //iconos personalizados
     var iconDefault = L.icon({
@@ -111,5 +121,28 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
       latitudControl.setValue(latlng.lat.toString());
       longitudControl.setValue(latlng.lng.toString());
     }
+  }
+
+  init() {
+    if (this.edicion) {
+      this.lS.getById(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idLocalizacion: new FormControl(data.idLocalizacion),
+          direccion: new FormControl(data.direccion),
+          distrito: new FormControl(data.distrito),
+          region: new FormControl(data.region),
+          referencia: new FormControl(data.referencia),
+          latitud: new FormControl(data.latitud),
+          longitud: new FormControl(data.longitud),
+        });
+      });
+    }
+  }
+  obtenerConntrolCampo(nombreCampo: string): AbstractControl {
+    const control = this.form.get(nombreCampo);
+    if (!control) {
+      throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
+    }
+    return control;
   }
 }

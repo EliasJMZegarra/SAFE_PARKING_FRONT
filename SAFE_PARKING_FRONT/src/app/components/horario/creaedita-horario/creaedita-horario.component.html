@@ -9,23 +9,7 @@
 </head>
 
 <body>
-    <div>
-        <header class="encabezado">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-            </div>
-        </header>
-        <input type="checkbox" id="btn-menu" />
-        <div class="encabezado-menu">
-            <div class="cont-menu">
-                <nav>
-                    <a href="listar_horario">Listar Horarios</a>
-                    <a href="listar_horario/registrar_horario">Registrar Horarios</a>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
-    </div>
+
     <div class="container" style="text-align: center">
         <h1>Registro de Horario</h1>
         <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">

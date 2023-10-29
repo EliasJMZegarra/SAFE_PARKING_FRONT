@@ -112,9 +112,11 @@ const routes: Routes = [
     path: 'registrar_usuario/:id',
     component: CreaeditaUsuarioComponent,
   },
-  { path: 'footer', component: FooterComponent },
-  // apartados
 
+
+  // apartados
+  { path: 'footer', component: FooterComponent },
+  
   { path: 'vehiculos', component: VehiculosComponent },
 
   {

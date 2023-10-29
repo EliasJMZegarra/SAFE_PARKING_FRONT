@@ -27,6 +27,10 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
 
+  lugarABuscar: string = '';
+  resultados: Localizacion[] = [];
+
+
   constructor(
     private lS: LocalizacionService,
     private router: Router,
@@ -51,6 +55,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     });
     this.initializeMap();
   }
+  
   registrar() {
     if (this.form.valid) {
       this.localizacion.idLocalizacion = this.form.value.idLocalizacion;

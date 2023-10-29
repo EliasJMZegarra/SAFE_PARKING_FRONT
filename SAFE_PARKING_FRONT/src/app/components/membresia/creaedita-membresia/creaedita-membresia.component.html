@@ -10,23 +10,7 @@
     <router-outlet></router-outlet>
     <div [hidden]="route.children.length !== 0">
       <app-navbar></app-navbar>
-      <div>
-        <header class="encabezado">
-          <div class="btn-menu">
-            <label for="btn-menu">☰</label>
-          </div>
-        </header>
-    
-        <input type="checkbox" id="btn-menu" />
-        <div class="container-menu">
-          <div class="cont-menu">
-            <nav>
-              <a href="membresia">Membresias</a>
-            </nav>
-            <label for="btn-menu">✖️</label>
-          </div>
-        </div>
-      </div>
+
 
       <div class="titulo">
         <h2>Registrar</h2>

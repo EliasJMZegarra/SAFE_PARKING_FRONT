@@ -43,14 +43,18 @@ export class ListarLocalizacionesComponent implements OnInit {
     this.localizacionService.list().subscribe(
       (data) => {
         this.dataSource.data = data;
-        // Initialize the map after loading data
+        // Initialize the map for each location
+        data.forEach((element) => {
+          this.initializeMapForLocation(element);
+        });
       },
       (error) => {
         console.error('Error al obtener datos:', error);
-        // You can display an error message to the user
+        // Puedes mostrar un mensaje de error al usuario
       }
     );
   }
+  
 
   initializeMapForLocation(element: Localizacion): void {
     const mapId = `map_${element.idLocalizacion}`;

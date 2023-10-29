@@ -23,16 +23,6 @@ const shadowUrl = 'assets/marker-shadow.png';
 })
 export class ListarLocalizacionesComponent implements OnInit {
   dataSource: MatTableDataSource<Localizacion> = new MatTableDataSource();
-  displayedColumns: string[] = [
-    'idLocalizacion',
-    'direccion',
-    'distrito',
-    'region',
-    'referencia',
-    'latitud',
-    'longitud',
-    'Modificar',
-  ];
 
   editarLocalizacion: Localizacion | null = null;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -53,10 +43,9 @@ export class ListarLocalizacionesComponent implements OnInit {
     this.localizacionService.list().subscribe(
       (data) => {
         this.dataSource.data = data;
-        const primeraFila = this.dataSource.data[6]; // Cambia el índice si deseas acceder a otra fila
+        this.initializeMap();
 
         // Initialize the map after loading data
-        this.initializeMap(primeraFila.latitud, primeraFila.longitud);
       },
       (error) => {
         console.error('Error al obtener datos:', error);
@@ -65,7 +54,7 @@ export class ListarLocalizacionesComponent implements OnInit {
     );
   }
 
-  initializeMap(long: number, lat: number) {
+  initializeMap() {
     //iconos personalizados
     var iconDefault = L.icon({
       iconRetinaUrl,
@@ -79,20 +68,34 @@ export class ListarLocalizacionesComponent implements OnInit {
     });
     L.Marker.prototype.options.icon = iconDefault;
 
-    this.map = L.map('map').setView([long, lat], 13);
+    this.map = L.map('map').setView([-12.04318, -77.02824], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
       this.map
     );
-  }
-  eliminar(idLocalizacion: number) {
-    this.localizacionService.delete(idLocalizacion).subscribe(() => {
-      this.dataSource.data = this.dataSource.data.filter(
-        (loc) => loc.idLocalizacion !== idLocalizacion
-      );
+
+    // Escuchar el evento 'click' en el mapa y agregar un marcador
+    this.map.on('click', (e) => {
+      if (this.marker) {
+        // Si ya hay un marcador, quitarlo del mapa
+        this.map.removeLayer(this.marker);
+      }
+      this.addMarker(e.latlng);
     });
   }
-
-  modificar(localizacion: Localizacion) {
-    this.editarLocalizacion = localizacion;
+  addMarker(latlng: L.LatLng) {
+    // Agregar el nuevo marcador en la posición del clic
+    this.marker = L.marker(latlng).addTo(this.map);
+  }
+  initializeMapForLocation(element: Localizacion): void {
+    const mapId = `map_${element.idLocalizacion}`;
+    const mapElement = document.getElementById(mapId);
+    if (mapElement) {
+      const map = L.map(mapId).setView([element.latitud, element.longitud], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
+        map
+      );
+      const marker = L.marker([element.latitud, element.longitud]).addTo(map);
+      marker.bindPopup(element.direccion).openPopup();
+    }
   }
 }

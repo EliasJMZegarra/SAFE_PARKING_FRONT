@@ -1,19 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
 /*Estilos para el encabezado*/
 
+/*Pequeña actualizacion Copiar desde aqui*/
 .encabezado {
-  width: 100%;
-  text-align: left;
-  background-color: #333;
-  padding: 20px;
-}
-
-
-.encabezado .btn-menu label {
-  color: #fafafa;
-  font-size: 25px;
-  cursor: pointer;
-}
-
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 30px;
+  }
+  
+  .encabezado .btn-menu {
+    width: 50px;
+    height: 50px;
+    background-color: #1f1f1f;
+    border-radius: 50%; /* Hace que el botón sea completamente redondo */
+    cursor: pointer;
+    display: flex; /* Usar flexbox para centrar contenido vertical y horizontalmente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .encabezado .btn-menu label {
+    font-size: 25px;
+    color: #f2f2f2;
+    cursor: pointer;
+  }
+  
+  .encabezado .btn-menu:hover {
+    background-color: #414141; /* Cambia el color de fondo al pasar el mouse */
+    transition: background-color 250ms ease; /* Agrega una transición suave */
+  }
+  
+  /*----------hasta aqui--------------*/
+  
 .logo h1 {
   color: #fff;
   font-weight: 400;

@@ -1,18 +1,96 @@
+
+
+
+  /* Navigation Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cambiar el color de fondo */
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px; /* Espacio superior */
+}
+
+.textoPrincipal {
+    margin-bottom: 20px;
+}
+
+.button-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.listar {
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px;
+    transition: transform 0.3s ease-in-out; /* Efecto de transformación al pasar el mouse */
+}
+
+.listar:hover {
+    transform: scale(1.05); /* Escalar ligeramente al pasar el mouse */
+}
+
+.listar img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Hacer las imágenes redondas */
+}
+
+.listar a {
+    text-decoration: none;
+    color: #333;
+}
+
+.listar a:hover {
+    color: #ff6600; /* Cambiar color al pasar el mouse */
+}
+
 /*Estilos para el encabezado*/
 
+/*Pequeña actualizacion Copiar desde aqui*/
 .encabezado {
-  width: 100%;
-  text-align: left;
-  background-color: #333;
-  padding: 20px;
-}
-
-
-.encabezado .btn-menu label {
-  color: #fafafa;
-  font-size: 25px;
-  cursor: pointer;
-}
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 30px;
+  }
+  
+  .encabezado .btn-menu {
+    width: 50px;
+    height: 50px;
+    background-color: #1f1f1f;
+    border-radius: 50%; /* Hace que el botón sea completamente redondo */
+    cursor: pointer;
+    display: flex; /* Usar flexbox para centrar contenido vertical y horizontalmente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .encabezado .btn-menu label {
+    font-size: 25px;
+    color: #f2f2f2;
+    cursor: pointer;
+  }
+  
+  .encabezado .btn-menu:hover {
+    background-color: #414141; /* Cambia el color de fondo al pasar el mouse */
+    transition: background-color 250ms ease; /* Agrega una transición suave */
+  }
+  
+  /*----------hasta aqui--------------*/
 
 .logo h1 {
   color: #fff;
@@ -105,62 +183,3 @@
 }
 
 /*Fin de Menù lateral*/
-
-
-  /* Navigation Styles */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Cambiar el color de fondo */
-}
-
-.content {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 50px; /* Espacio superior */
-}
-
-.textoPrincipal {
-    margin-bottom: 20px;
-}
-
-.button-list {
-    display: flex;
-    justify-content: space-around;
-}
-
-.listar {
-    border: none;
-    background: #fff;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 10px;
-    transition: transform 0.3s ease-in-out; /* Efecto de transformación al pasar el mouse */
-}
-
-.listar:hover {
-    transform: scale(1.05); /* Escalar ligeramente al pasar el mouse */
-}
-
-.listar img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 50%; /* Hacer las imágenes redondas */
-}
-
-.listar a {
-    text-decoration: none;
-    color: #333;
-}
-
-.listar a:hover {
-    color: #ff6600; /* Cambiar color al pasar el mouse */
-}

@@ -1,3 +1,8 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
 .search-form {
     background-color: #f0f0f0;
     border: 2px solid #000000;
@@ -66,22 +71,38 @@
     color: #000000;
   }
   /*Estilos para el encabezado*/
-  .encabezado {
-  
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    padding: 20px;
-    left: 350px;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  
-  }
-  
+
+ /*Pequeña actualizacion Copiar desde aqui*/
+.encabezado {
+  text-align: left;
+  background-color: #f2f2f2;
+  padding: 30px;
+}
+
+.encabezado .btn-menu {
+  width: 50px;
+  height: 50px;
+  background-color: #1f1f1f;
+  border-radius: 50%; /* Hace que el botón sea completamente redondo */
+  cursor: pointer;
+  display: flex; /* Usar flexbox para centrar contenido vertical y horizontalmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.encabezado .btn-menu label {
+  font-size: 25px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.encabezado .btn-menu:hover {
+  background-color: #414141; /* Cambia el color de fondo al pasar el mouse */
+  transition: background-color 250ms ease; /* Agrega una transición suave */
+}
+
+/*----------hasta aqui--------------*/
+
   .container .btn-menu,
   .logo {
     float: left;

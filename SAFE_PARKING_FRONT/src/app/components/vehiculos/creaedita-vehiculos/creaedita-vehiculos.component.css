@@ -69,20 +69,34 @@ li.menu-item a:hover {
 }
 
 /*Estilos para el encabezado*/
-.encabezado {
 
-  background-color: #333;
-  color: #fff;
+ /*Pequeña actualizacion Copiar desde aqui*/
+ .encabezado {
   text-align: left;
-  padding: 20px;
-  left: 350px;
+  background-color: #f2f2f2;
+  padding: 30px;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+.encabezado .btn-menu {
+  width: 50px;
+  height: 50px;
+  background-color: #1f1f1f;
+  border-radius: 50%; /* Hace que el botón sea completamente redondo */
+  cursor: pointer;
+  display: flex; /* Usar flexbox para centrar contenido vertical y horizontalmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
 
+.encabezado .btn-menu label {
+  font-size: 25px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.encabezado .btn-menu:hover {
+  background-color: #414141; /* Cambia el color de fondo al pasar el mouse */
+  transition: background-color 250ms ease; /* Agrega una transición suave */
 }
 
 .container .btn-menu,

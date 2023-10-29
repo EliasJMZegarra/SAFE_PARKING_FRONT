@@ -1,5 +1,6 @@
 <router-outlet></router-outlet>
 <app-navbar></app-navbar>
+
 <div [hidden]="route.children.length !== 0">
   <!DOCTYPE html>
   <html lang="en">
@@ -18,23 +19,7 @@
   </head>
 
   <body>
-    <div>
-      <header class="encabezado">
-        <div class="btn-menu">
-          <label for="btn-menu">☰</label>
-        </div>
-      </header>
-      <input type="checkbox" id="btn-menu" />
-      <div class="encabezado-menu">
-        <div class="cont-menu">
-          <nav>
-            <a href="localizaciones">Localizaciones</a>
-            <a href="listar_horario">Horarios</a>
-          </nav>
-          <label for="btn-menu">✖️</label>
-        </div>
-      </div>
-    </div>
+    <app-navbar-arrendador></app-navbar-arrendador>
 
     <div class="contenido-principal">
       <div class="textoPrincipal">

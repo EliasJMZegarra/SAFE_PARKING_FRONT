@@ -72,7 +72,7 @@ const routes: Routes = [
         component: BuscarVehiculosComponent,
       },
       {
-        path: 'buscar_vehiculos',
+        path: 'listar_vehiculos',
         component: ListarVehiculosComponent,
       },
     ],

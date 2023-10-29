@@ -13,6 +13,11 @@ import { Localizacion } from 'src/app/models/localizacion';
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';
+import 'leaflet-control-geocoder'; // Importar el plugin de geocodificación
+
+
+declare var google: any;
+
 @Component({
   selector: 'app-creaedita-localizaciones',
   templateUrl: './creaedita-localizaciones.component.html',
@@ -36,7 +41,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     public route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -55,7 +60,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     });
     this.initializeMap();
   }
-  
+
   registrar() {
     if (this.form.valid) {
       this.localizacion.idLocalizacion = this.form.value.idLocalizacion;
@@ -99,18 +104,43 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     L.Marker.prototype.options.icon = iconDefault;
 
     this.map = L.map('map').setView([-12.04318, -77.02824], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(
       this.map
     );
 
-    // Escuchar el evento 'click' en el mapa y agregar un marcador
+
+    /*Nuevo para boton de busqueda*/
+
+    const searchControl = (L.Control as any).geocoder(); // Crear el control de búsqueda
+
+    searchControl.addTo(this.map); // Agregar el control al mapa
+
+    searchControl.on('markgeocode', (event: any) => {
+      const { center } = event.geocode; // Obtener la ubicación del resultado de búsqueda
+      this.map.setView(center, 13); // Reposicionar el mapa a la ubicación encontrada
+
+      if (this.marker) {
+        this.map.removeLayer(this.marker); // Quitar marcador existente
+      }
+      this.addMarker(center); // Agregar un nuevo marcador
+    });
+
     this.map.on('click', (e) => {
       if (this.marker) {
-        // Si ya hay un marcador, quitarlo del mapa
         this.map.removeLayer(this.marker);
       }
       this.addMarker(e.latlng);
     });
+
+    this.map.on('contextmenu', () => {
+      if (this.marker) {
+        this.map.removeLayer(this.marker);
+      }
+    });
+
+  
   }
 
   addMarker(latlng: L.LatLng) {
@@ -150,4 +180,7 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     }
     return control;
   }
+
+
+
 }

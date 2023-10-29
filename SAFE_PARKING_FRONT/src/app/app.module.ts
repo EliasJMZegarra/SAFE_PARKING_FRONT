@@ -54,6 +54,7 @@ import { ModificarLocalizacionesComponent } from './components/localizaciones/mo
 import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
 import { NavbarArrendadorComponent } from './components/navbar-arrendador/navbar-arrendador.component';
 import { NavbarConductorComponent } from './components/navbar-conductor/navbar-conductor.component';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -7,10 +7,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <title>Registrar Localización</title>
   </head>
 
   <body>
+    
     <div class="container">
       <form [formGroup]="form" (ngSubmit)="registrar()" class="example-form">
         <h1>REGISTRAR LOCALIZACIÓN</h1>
@@ -71,7 +74,7 @@
         </div>
 
 
-  
+
         <div id="map" style="height: 400px"></div>
         <button mat-raised-button color="primary">REGISTRAR</button>
         <button mat-raised-button color="warn" routerLink="/listar">CANCELAR</button>

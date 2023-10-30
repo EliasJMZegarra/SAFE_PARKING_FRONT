@@ -1,73 +1,105 @@
-import { Component } from '@angular/core';
-import { OnInit, ViewChild } from '@angular/core'; // Añadir
-
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-  AbstractControl,
-} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Horario } from 'src/app/models/horario';
 import { HorarioService } from 'src/app/services/horario.service';
-
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-listar-horario',
   templateUrl: './listar-horario.component.html',
-  styleUrls: ['./listar-horario.component.css']
+  styleUrls: ['./listar-horario.component.css'],
 })
 export class ListarHorarioComponent implements OnInit {
-  dataSource: MatTableDataSource<Horario> = new MatTableDataSource();
+  horariosPorFecha: { fecha: string; horarios: Horario[] }[] = [];
+  horasDelDia: string[] = this.generarHorasDelDia(); // Array de horas del día
 
-  displayedColumns: string[] =
-    ['idHorario', 'dia', 'horaApertura', 'horaCierre', 'accion01', 'accion02'];
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  constructor(
+    private horarioService: HorarioService,
+    public route: ActivatedRoute
+  ) {}
 
-  id: number = 0;
-  form: FormGroup = new FormGroup({});
-  mensaje: string;
-
-
-  constructor(private hS: HorarioService, private formBuilder: FormBuilder) {
-    this.mensaje = '';
-  }
-
-  ngOnInit(): void {
-    //Para que muestre la lista completa
-    this.hS.list().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-    });
-    //Para que no haya necesidad de Refrescar la pagina
-    this.hS.getList().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-
-    });
-
-    this.form = this.formBuilder.group({
-      id: [null, Validators.required],
-    });
-
-  }
-
-  filter(en: any) {
-    this.dataSource.filter = en.target.value.trim();
-  }
-  //Añadir
-
-  eliminar(id: number) {
-    this.hS.delete(id).subscribe((data) => {
-      this.hS.list().subscribe((data) => {
-        this.hS.setList(data);
-      });
+  ngOnInit() {
+    this.horarioService.list().subscribe((horarios: Horario[]) => {
+      this.organizarHorariosPorFecha(horarios);
     });
   }
 
+  // Generar horas del día en formato HH:00
+  generarHorasDelDia(): string[] {
+    const horas: string[] = [];
+    for (let i = 0; i < 24; i++) {
+      const hora = `${String(i).padStart(2, '0')}:00`;
+      horas.push(hora);
+    }
+    return horas;
+  }
 
+  organizarHorariosPorFecha(horarios: Horario[]) {
+    const grouped: { [fecha: string]: Horario[] } = {};
 
+    horarios.forEach((horario: Horario) => {
+      if (typeof horario.fecha === 'string') {
+        horario.fecha = new Date(horario.fecha);
+      }
+
+      if (horario.fecha instanceof Date && !isNaN(horario.fecha.getTime())) {
+        const fecha = horario.fecha.toISOString().split('T')[0];
+        if (!grouped[fecha]) {
+          grouped[fecha] = [];
+        }
+        grouped[fecha].push(horario);
+      } else {
+        console.error(
+          'Error: La fecha no es un objeto Date válido',
+          horario.fecha
+        );
+      }
+    });
+
+    this.horariosPorFecha = Object.keys(grouped).map((fecha) => ({
+      fecha,
+      horarios: grouped[fecha],
+    }));
+  }
+  diasDeLaSemana: string[] = [
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
+    'Domingo',
+  ];
+
+  obtenerNombreDia(fecha: string): string {
+    const diasSemana = [
+      'Domingo',
+      'Lunes',
+      'Martes',
+      'Miércoles',
+      'Jueves',
+      'Viernes',
+      'Sábado',
+    ];
+
+    // Ajuste de la zona horaria
+    const date = new Date(fecha);
+    date.setDate(date.getDate() + 1); // Sumar un día
+
+    const nombreDia = diasSemana[date.getDay()];
+    return nombreDia;
+  }
+
+  obtenerIdHorario(id: number) {
+    console.log('ID del horario:', id);
+    // Aquí puedes realizar otras acciones con el ID del horario
+  }
+
+  compararHorarioConHora(horario: Horario, hora: string): boolean {
+    const horaInicio = parseInt(horario.horaApertura.substring(0, 2));
+    const horaCierre = parseInt(horario.horaCierre.substring(0, 2));
+    const horaSeleccionada = parseInt(hora);
+
+    // Verificar si la hora seleccionada está dentro del rango de horarios
+    return horaSeleccionada >= horaInicio && horaSeleccionada < horaCierre;
+  }
 }

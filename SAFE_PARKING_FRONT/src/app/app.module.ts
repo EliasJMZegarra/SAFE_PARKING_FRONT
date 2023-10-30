@@ -54,6 +54,7 @@ import { ModificarLocalizacionesComponent } from './components/localizaciones/mo
 import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
 import { NavbarArrendadorComponent } from './components/navbar-arrendador/navbar-arrendador.component';
 import { NavbarConductorComponent } from './components/navbar-conductor/navbar-conductor.component';
+import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NavbarConductorComponent } from './components/navbar-conductor/navbar-c
     ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
+
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
     LocalizacionesComponent,
@@ -88,6 +90,7 @@ import { NavbarConductorComponent } from './components/navbar-conductor/navbar-c
     NavbarAdministradorComponent,
     NavbarArrendadorComponent,
     NavbarConductorComponent,
+    ModificarHorarioComponent,
   ],
   imports: [
     BrowserModule,

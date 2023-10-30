@@ -14,48 +14,27 @@ import {
   AbstractControl,
 } from '@angular/forms';
 
-
 @Component({
   selector: 'app-creaedita-horario',
   templateUrl: './creaedita-horario.component.html',
-  styleUrls: ['./creaedita-horario.component.css']
+  styleUrls: ['./creaedita-horario.component.css'],
 })
 export class CreaeditaHorarioComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-
-  horario: Horario = new Horario()
-  mensaje: string = ""
+  maxFecha: Date = moment().add(-1, 'days').toDate();
+  horario: Horario = new Horario();
+  mensaje: string = '';
   //minFecha: Date = moment().add(-0, 'days').toDate();
-
-
-
-  dias_semana: { value: string, viewValue: string }[] =
-    [
-      { value: 'Lunes', viewValue: 'Lunes' },
-      { value: 'Martes', viewValue: 'Martes' },
-      { value: 'Miércoles', viewValue: 'Miércoles' },
-      { value: 'Jueves', viewValue: 'Jueves' },
-      { value: 'Viernes', viewValue: 'Viernes' },
-      { value: 'Sábado', viewValue: 'Sábado' },
-      { value: 'Domingo', viewValue: 'Domingo' }
-    ]
-
-
-  id: number = 0;//Añadir
-  edicion: boolean = false;//Añadir
+  id: number = 0; //Añadir
+  edicion: boolean = false; //Añadir
 
   constructor(
     private hS: HorarioService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute //Añadir
-  ) {
-
-
-
-  }
+    public route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
-
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
@@ -66,8 +45,8 @@ export class CreaeditaHorarioComponent implements OnInit {
       idHorario: [''],
       horaApertura: ['', Validators.required],
       horaCierre: ['', Validators.required],
-      dia: ['', Validators.required],
-    })
+      fecha: ['', Validators.required],
+    });
   }
 
   registrar(): void {
@@ -75,7 +54,7 @@ export class CreaeditaHorarioComponent implements OnInit {
       this.horario.idHorario = this.form.value.idHorario;
       this.horario.horaApertura = this.form.value.horaApertura;
       this.horario.horaCierre = this.form.value.horaCierre;
-      this.horario.dia = this.form.value.dia
+      this.horario.fecha = this.form.value.fecha;
       if (this.edicion) {
         this.hS.update(this.horario).subscribe(() => {
           this.hS.list().subscribe((data) => {
@@ -96,7 +75,7 @@ export class CreaeditaHorarioComponent implements OnInit {
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {
-    const control = this.form.get(nombreCampo)
+    const control = this.form.get(nombreCampo);
     if (!control) {
       throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
     }
@@ -110,7 +89,7 @@ export class CreaeditaHorarioComponent implements OnInit {
           idHorario: new FormControl(data.idHorario),
           horaApertura: new FormControl(data.horaApertura),
           horaCierre: new FormControl(data.horaCierre),
-          dia: new FormControl(data.dia),
+          fecha: new FormControl(data.fecha),
         });
       });
     }
@@ -140,5 +119,4 @@ export class CreaeditaHorarioComponent implements OnInit {
     const hora24h = horaNum.toString().padStart(2, '0');
     return `${hora24h}:${minutos}`;
   }
-
 }

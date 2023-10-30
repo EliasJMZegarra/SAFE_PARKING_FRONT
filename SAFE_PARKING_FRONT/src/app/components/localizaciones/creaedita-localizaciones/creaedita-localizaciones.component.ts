@@ -2,16 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
+  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LocalizacionService } from 'src/app/services/localizacion.service';
 import * as L from 'leaflet';
 import { Localizacion } from 'src/app/models/localizacion';
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';
+import 'leaflet-control-geocoder'; // Importar el plugin de geocodificación
+
+
+declare var google: any;
+
 @Component({
   selector: 'app-creaedita-localizaciones',
   templateUrl: './creaedita-localizaciones.component.html',
@@ -23,16 +29,28 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
   mensaje: String = '';
   map!: L.Map;
   marker: L.Marker | null = null;
+  id: number = 0;
+  edicion: boolean = false;
+
+  lugarABuscar: string = '';
+  resultados: Localizacion[] = [];
+
 
   constructor(
     private lS: LocalizacionService,
     private router: Router,
     private formBuilder: FormBuilder,
     public route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    });
     this.form = this.formBuilder.group({
+      idDessert: [''],
       direccion: ['', Validators.required],
       distrito: ['', Validators.required],
       region: ['', Validators.required],
@@ -42,8 +60,10 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     });
     this.initializeMap();
   }
+
   registrar() {
     if (this.form.valid) {
+      this.localizacion.idLocalizacion = this.form.value.idLocalizacion;
       this.localizacion.direccion = this.form.value.direccion;
       this.localizacion.distrito = this.form.value.distrito;
       this.localizacion.region = this.form.value.region;
@@ -51,24 +71,24 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
       this.localizacion.latitud = this.form.value.latitud;
       this.localizacion.longitud = this.form.value.longitud;
 
-      this.lS.insert(this.localizacion).subscribe((data) => {
-        this.lS.list().subscribe((data) => {
-          this.lS.setList(data);
+      if (this.edicion) {
+        this.lS.update(this.localizacion).subscribe(() => {
+          this.lS.list().subscribe((data) => {
+            this.lS.setList(data);
+          });
         });
-      });
-      this.router.navigate(['listar_localizaciones']);
+      } else {
+        this.lS.insert(this.localizacion).subscribe((data) => {
+          this.lS.list().subscribe((data) => {
+            this.lS.setList(data);
+          });
+        });
+      }
+      this.router.navigate(['modificar_localizaciones']);
     } else {
-      this.mensaje = 'completa todos los campos!!';
+      this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
   }
-  obtenerConntrolCampo(nombreCampo: string): AbstractControl {
-    const control = this.form.get(nombreCampo);
-    if (!control) {
-      throw new Error(`control no encontrado por el campo $(nombreCampo)`);
-    }
-    return control;
-  }
-
   initializeMap() {
     //iconos personalizados
     var iconDefault = L.icon({
@@ -84,18 +104,43 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
     L.Marker.prototype.options.icon = iconDefault;
 
     this.map = L.map('map').setView([-12.04318, -77.02824], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(
       this.map
     );
 
-    // Escuchar el evento 'click' en el mapa y agregar un marcador
+
+    /*Nuevo para boton de busqueda*/
+
+    const searchControl = (L.Control as any).geocoder(); // Crear el control de búsqueda
+
+    searchControl.addTo(this.map); // Agregar el control al mapa
+
+    searchControl.on('markgeocode', (event: any) => {
+      const { center } = event.geocode; // Obtener la ubicación del resultado de búsqueda
+      this.map.setView(center, 13); // Reposicionar el mapa a la ubicación encontrada
+
+      if (this.marker) {
+        this.map.removeLayer(this.marker); // Quitar marcador existente
+      }
+      this.addMarker(center); // Agregar un nuevo marcador
+    });
+
     this.map.on('click', (e) => {
       if (this.marker) {
-        // Si ya hay un marcador, quitarlo del mapa
         this.map.removeLayer(this.marker);
       }
       this.addMarker(e.latlng);
     });
+
+    this.map.on('contextmenu', () => {
+      if (this.marker) {
+        this.map.removeLayer(this.marker);
+      }
+    });
+
+  
   }
 
   addMarker(latlng: L.LatLng) {
@@ -112,4 +157,30 @@ export class CreaeditaLocalizacionesComponent implements OnInit {
       longitudControl.setValue(latlng.lng.toString());
     }
   }
+
+  init() {
+    if (this.edicion) {
+      this.lS.getById(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idLocalizacion: new FormControl(data.idLocalizacion),
+          direccion: new FormControl(data.direccion),
+          distrito: new FormControl(data.distrito),
+          region: new FormControl(data.region),
+          referencia: new FormControl(data.referencia),
+          latitud: new FormControl(data.latitud),
+          longitud: new FormControl(data.longitud),
+        });
+      });
+    }
+  }
+  obtenerConntrolCampo(nombreCampo: string): AbstractControl {
+    const control = this.form.get(nombreCampo);
+    if (!control) {
+      throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
+    }
+    return control;
+  }
+
+
+
 }

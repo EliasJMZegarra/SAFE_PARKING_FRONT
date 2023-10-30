@@ -4,7 +4,6 @@ import { BuscarMembresiaComponent } from './components/membresia/buscar-membresi
 import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
 import { MembresiaComponent } from './components/membresia/membresia.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
-import { MembresiaService } from './services/membresia.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +15,6 @@ import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-ve
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
 import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
 import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
-import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,6 +22,10 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
 import { NgModule } from '@angular/core';
+import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
+import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
+import { HorarioComponent } from './components/horario/horario.component';
+import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -46,6 +48,14 @@ const routes: Routes = [
         path: 'buscar_localizaciones',
         component: BuscarLocalizacionesComponent,
       },
+      {
+        path: 'modificar_localizaciones',
+        component: ModificarLocalizacionesComponent,
+      },
+      {
+        path: 'modificar_localizaciones/ediciones/:id',
+        component: CreaeditaLocalizacionesComponent,
+      },
     ],
   },
 
@@ -63,7 +73,7 @@ const routes: Routes = [
         component: BuscarVehiculosComponent,
       },
       {
-        path: 'buscar_vehiculos',
+        path: 'listar_vehiculos',
         component: ListarVehiculosComponent,
       },
     ],
@@ -89,12 +99,28 @@ const routes: Routes = [
     ],
   },
   //Horarios
+
   {
-    path: 'listar_horario',
-    component: ListarHorarioComponent,
+    path: 'horarios',
+    component: HorarioComponent,
     children: [
-      { path: 'edicion/:id', component: CreaeditaHorarioComponent },
-      { path: 'registrar_horario', component: CreaeditaHorarioComponent },
+      {
+        path: 'registrar_horarios',
+        component: CreaeditaHorarioComponent,
+      },
+      {
+        path: 'listar_horarios',
+        component: ListarHorarioComponent,
+      },
+
+      {
+        path: 'modificar_horarios',
+        component: ModificarHorarioComponent,
+      },
+      {
+        path: 'modificar_horarios/ediciones/:id',
+        component: CreaeditaHorarioComponent,
+      },
     ],
   },
 
@@ -103,8 +129,9 @@ const routes: Routes = [
     path: 'registrar_usuario/:id',
     component: CreaeditaUsuarioComponent,
   },
-  { path: 'footer', component: FooterComponent },
+
   // apartados
+  { path: 'footer', component: FooterComponent },
 
   { path: 'vehiculos', component: VehiculosComponent },
 

@@ -18,26 +18,12 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
+      
       <title>Document</title>
     </head>
 
     <body>
-      <div>
-        <header class="encabezado">
-          <div class="btn-menu">
-            <label for="btn-menu">☰</label>
-          </div>
-        </header>
-        <input type="checkbox" id="btn-menu" />
-        <div class="encabezado-menu">
-          <div class="cont-menu">
-            <nav>
-              <a href="localizaciones">Localizaciones</a>
-            </nav>
-            <label for="btn-menu">✖️</label>
-          </div>
-        </div>
-      </div>
+
       <div class="content">
         <div class="textoPrincipal">
           <h1>LOCALIZACIONES</h1>
@@ -74,10 +60,21 @@
                 >Buscar Localizaciones</a
               >
             </button>
+
+            <button class="listar">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/011/413/568/non_2x/observation-or-examination-curiosity-to-discover-secret-search-or-analyze-information-investigate-or-research-concept-curious-businessman-holding-magnifying-glass-observe-data-with-question-mark-vector.jpg"
+                alt="Description of the image"
+              />
+              <a routerLink="/localizaciones/modificar_localizaciones"
+                >Modificar localizaciones</a
+              >
+            </button>
           </div>
         </nav>
       </div>
-      <app-footer></app-footer>
+      
     </body>
+    <app-footer></app-footer>
   </html>
 </div>

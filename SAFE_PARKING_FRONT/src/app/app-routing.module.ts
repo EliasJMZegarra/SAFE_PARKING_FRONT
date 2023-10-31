@@ -1,3 +1,4 @@
+import { CantReservasPorUsuarioComponent } from './components/reportes/cant-reservas-por-usuario/cant-reservas-por-usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { CreaeditaMembresiaComponent } from './components/membresia/creaedita-membresia/creaedita-membresia.component';
 import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
@@ -25,6 +26,10 @@ import { HomeArrendadorComponent } from './components/home-arrendador/home-arren
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
 import { NgModule } from '@angular/core';
 import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { CantIncidentesPorRolComponent } from './components/reportes/cant-incidentes-por-rol/cant-incidentes-por-rol.component';
+import { CantReservasPorFechaComponent } from './components/reportes/cant-reservas-por-fecha/cant-reservas-por-fecha.component';
+import { CantReservasPorTipoPagoComponent } from './components/reportes/cant-reservas-por-tipo-pago/cant-reservas-por-tipo-pago.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -113,10 +118,33 @@ const routes: Routes = [
     component: CreaeditaUsuarioComponent,
   },
 
+  //Reportes - Queries
+  {
+    path: 'reportes',
+    component: ReportesComponent,
+    children: [
+      {
+        path: 'cant-incidentes-por-rol',
+        component: CantIncidentesPorRolComponent,
+      },
+      {
+        path: 'cant-reservas-por-fecha',
+        component: CantReservasPorFechaComponent,
+      },
+      {
+        path: 'cant-reservas-por-tipoPago',
+        component: CantReservasPorTipoPagoComponent,
+      },
+      {
+        path: 'cant-reservas-por-usuario',
+        component: CantReservasPorUsuarioComponent,
+      }
+    ],
+  },
 
   // apartados
   { path: 'footer', component: FooterComponent },
-  
+
   { path: 'vehiculos', component: VehiculosComponent },
 
   {
@@ -141,4 +169,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

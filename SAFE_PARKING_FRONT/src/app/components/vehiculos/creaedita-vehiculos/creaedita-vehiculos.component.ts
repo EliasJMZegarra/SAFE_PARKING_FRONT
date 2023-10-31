@@ -54,9 +54,14 @@ export class CreaeditaVehiculosComponent implements OnInit {
 
   registrar() {
     if (this.form.valid) {
-      // Assign form values to the 'vehiculo' object
-      this.vehiculo = this.form.value;
-      this.vehiculo.imagenVehiculo = this.imagenCortada;
+      this.vehiculo.placaVehiculo = this.form.value.placaVehiculo;
+      this.vehiculo.categoriaVehiculo = this.form.value.categoriaVehiculo;
+      this.vehiculo.colorVehiculo = this.form.value.colorVehiculo;
+      this.vehiculo.marcaVehiculo = this.form.value.marcaVehiculo;
+      this.vehiculo.tamanioVehiculo = this.form.value.tamanioVehiculo;
+      this.vehiculo.tarjetaPropiedadVehiculo =
+        this.form.value.tarjetaPropiedadVehiculo;
+      this.vehiculo.imagenVehiculo = this.imagenCortada; // Guardar la imagen en el objeto vehículo
 
       // Save vehicle and update list
       this.vS.insert(this.vehiculo).subscribe((data) => {

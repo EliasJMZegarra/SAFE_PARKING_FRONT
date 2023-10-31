@@ -55,6 +55,8 @@ import { NavbarAdministradorComponent } from './components/navbar-administrador/
 import { NavbarArrendadorComponent } from './components/navbar-arrendador/navbar-arrendador.component';
 import { NavbarConductorComponent } from './components/navbar-conductor/navbar-conductor.component';
 import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
+import { ColorSketchModule } from 'ngx-color/sketch';
+import { ColorMaterialModule } from 'ngx-color/material'; // <color-material></color-material>
 
 @NgModule({
   declarations: [
@@ -115,6 +117,8 @@ import { ModificarHorarioComponent } from './components/horario/modificar-horari
     HttpClientModule,
     RouterModule,
     NgxMaterialTimepickerModule,
+    ColorSketchModule,
+    ColorMaterialModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

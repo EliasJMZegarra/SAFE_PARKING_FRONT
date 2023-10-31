@@ -20,43 +20,16 @@
     </head>
 
     <body>
-     
-      <div class="content">
-        <div class="textoPrincipal">
-          <h1>VEHICULOS</h1>
-          <p>Aquí podrás gestionar tus propiedades y mucho más.</p>
-        </div>
-        <nav>
-          <div class="button-list">
-            <button class="listar">
-              <img
-                src="https://como.help/uploads/2019/2/eb35b60828f6013ed1584d05fb1d4496e077ebd01fac104490f3c47fa3e8bdbc_1280_large.jpg"
-                alt="Description of the image"
-              />
-              <a routerLink="/vehiculos/listar_vehiculos">Listar Vehiculos</a>
-            </button>
+      <h2>Sección de Inserción de Imagen</h2>
 
-            <button class="listar">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2422/2422601.png"
-                alt="Description of the image"
-              />
-              <a routerLink="/vehiculos/registrar_vehiculos"
-                >Registrar Vehiculos</a
-              >
-            </button>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <button (click)="insertImage()">Insertar Imagen</button>
 
-            <button class="listar">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/011/413/568/non_2x/observation-or-examination-curiosity-to-discover-secret-search-or-analyze-information-investigate-or-research-concept-curious-businessman-holding-magnifying-glass-observe-data-with-question-mark-vector.jpg"
-                alt="Description of the image"
-              />
-              <a routerLink="/vehiculos/buscar_vehiculos">Buscar Vehiculos</a>
-            </button>
-          </div>
-        </nav>
+      <div *ngIf="selectedImage">
+        <h3>Imagen Seleccionada:</h3>
+        <img [src]="selectedImage" alt="Imagen seleccionada" />
       </div>
-      <app-footer></app-footer>
+      <button (click)="guardarImagen()">Guardar Imagen</button>
     </body>
   </html>
 </div>

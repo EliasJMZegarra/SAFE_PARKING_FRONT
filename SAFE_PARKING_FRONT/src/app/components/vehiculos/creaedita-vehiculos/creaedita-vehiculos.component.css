@@ -129,3 +129,12 @@ button[color="warn"]:hover {
   background-color: #D94343;
 }
 
+input#colorVehiculo {
+  border: 2px solid red; /* Por ejemplo, resaltar el borde del campo */
+  /* Otros estilos que desees aplicar */
+}
+
+.text-danger {
+  color: red; /* Estilo para el mensaje de error */
+  font-size: 12px; /* Tamaño del texto del mensaje de error */
+}

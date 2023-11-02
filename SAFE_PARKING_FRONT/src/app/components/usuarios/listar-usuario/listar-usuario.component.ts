@@ -35,7 +35,7 @@ export class ListarUsuarioComponent implements OnInit {
 
   constructor(private uS: UsuarioService, public route: ActivatedRoute) {}
   ngOnInit(): void {
-    this.uS.list().subscribe((data) => {
+    this.uS.listar().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -58,7 +58,7 @@ export class ListarUsuarioComponent implements OnInit {
   }
   eliminar(idUsuario: number) {
     this.uS.eliminar(idUsuario).subscribe(() => {
-      this.uS.list().subscribe((data) => {
+      this.uS.listar().subscribe((data) => {
         this.uS.setList(data);
       });
     });

@@ -81,7 +81,7 @@ export class CreaeditaUsuarioComponent implements OnInit {
       this.usuario.membresia.idMembresia = this.form.value.membresia;
 
       this.uS.insert(this.usuario).subscribe((data) => {
-        this.uS.list().subscribe((data) => {
+        this.uS.listar().subscribe((data) => {
           this.uS.setList(data);
         });
       });

@@ -21,7 +21,7 @@ export class UsuarioService {
     return this.http.post<Usuario>(endpoint, m_usuario);
   }
 
-  list() {
+  listar() {
     return this.http.get<Usuario[]>(`${this.url}/Listar`);
   }
   setList(listaNueva: Usuario[]) {

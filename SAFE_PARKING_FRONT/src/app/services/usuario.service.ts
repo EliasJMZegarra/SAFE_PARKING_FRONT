@@ -22,7 +22,7 @@ export class UsuarioService {
   }
 
   list() {
-    return this.http.get<Usuario[]>(this.url);
+    return this.http.get<Usuario[]>(`${this.url}/Listar`);
   }
   setList(listaNueva: Usuario[]) {
     this.listaCambio.next(listaNueva);
@@ -35,19 +35,11 @@ export class UsuarioService {
     const endpoint = `${base_url}/ListarporID/${id}`;
     return this.http.get<Usuario>(endpoint);
   }
-  update(id: any, m_customer: Usuario) {
-    const endpoint = `${base_url}/Modificar`;
-    return this.http.put<Usuario>(endpoint, m_customer);
+  update(usuario: Usuario) {
+    return this.http.put(`${this.url}/Modificar`, usuario);
   }
-
   eliminar(id: number) {
     const endpoint = `${base_url}/Eliminar/${id}`;
     return this.http.delete<Usuario>(endpoint);
-  }
-  uploadImage(file: File) {
-    // TODO: Implement this function to upload the image to a server.
-    return new Promise((resolve, reject) => {
-      resolve('');
-    });
   }
 }

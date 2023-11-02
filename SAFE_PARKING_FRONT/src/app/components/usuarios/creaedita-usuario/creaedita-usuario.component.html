@@ -41,17 +41,20 @@
         </mat-form-field>
       </div>
 
-      <mat-form-field class="example-full-width" color="accent">
-        <mat-label>idMembresia</mat-label>
-        <input
-          matInput
-          placeholder="idMembresia"
-          formControlName="idMembresia"
-        />
+      <mat-form-field class="example-full-width">
+        <mat-label>membresia</mat-label>
+        <mat-select formControlName="membresia">
+          <mat-option
+            *ngFor="let p of listarMembresias"
+            [value]="p.idMembresia"
+          >
+            {{ p.tipoMembresia }}
+          </mat-option>
+        </mat-select>
         <mat-error
-          *ngIf="obtenerControlCampo('idMembresia')?.errors?.['required']"
+          *ngIf="obtenerControlCampo('membresia')?.errors?.['required']"
         >
-          El membresia es obligatorio.
+          El postre es obligatorio.
         </mat-error>
       </mat-form-field>
 

@@ -1,3 +1,4 @@
+import { Membresia } from './membresia';
 export class Usuario {
   idUsuario?: number;
   nombre?: string;
@@ -11,5 +12,5 @@ export class Usuario {
   fechaNacimiento: Date = new Date(Date.now());
   telefono?: number;
   enabled?: boolean;
-  idMembresia: number = 0;
+  membresia: Membresia = new Membresia();
 }

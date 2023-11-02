@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-<div id="mySidenav" class="sidenav">
-    <p class="logo">Portal Arrendador</p>
-    <input type="checkbox" class="menu-toggle" id="menu1">
-    <label for="menu1" class="menu">
-      <i class="material-icons">dashboard</i> Dashboard
-    </label>
-    <input type="checkbox" class="menu-toggle" id="menu2">
-    <label for="menu2" class="menu">
-      <i class="material-icons">attach_money</i> Localizaciones
-    </label>
-    <ul class="sub-menu">
-      <li><a href="membresia/registrar_membresias">Registrar localizaciones</a></li>
-      <li><a href="membresia/listar_membresias">Listar localizaciones</a></li>
-      <li><a href="membresia/buscar_membresias">Buscar localizaciones</a></li>
-    </ul>
-    <input type="checkbox" class="menu-toggle" id="menu3">
-    <label for="menu3" class="menu">
-      <i class="material-icons">directions_car</i> Horarios
-    </label>
-    <ul class="sub-menu">
-      <li><a href="listar_horario/registrar_vehiculos">Registrar horarios</a></li>
-      <li><a href="listar_horario">Listar horarios</a></li>
-    </ul>
-  </div>
- 
-</body>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <p class="logo">Portal Arrendador</p>
+      <input type="checkbox" class="menu-toggle" id="menu1" />
+      <label for="menu1" class="menu">
+        <i class="material-icons">dashboard</i> Dashboard
+      </label>
+      <input type="checkbox" class="menu-toggle" id="menu2" />
+      <label for="menu2" class="menu">
+        <i class="material-icons">attach_money</i> Localizaciones
+      </label>
+      <ul class="sub-menu">
+        <li>
+          <a href="localizaciones/registrar_localizaciones"
+            >Registrar localizaciones</a
+          >
+        </li>
+        <li>
+          <a href="localizaciones/listar_localizaciones"
+            >Listar localizaciones</a
+          >
+        </li>
+        <li>
+          <a href="localizaciones/buscar_localizaciones"
+            >Buscar localizaciones</a
+          >
+        </li>
+        <li>
+          <a href="localizaciones/modificar_localizaciones"
+            >Modificar localizaciones</a
+          >
+        </li>
+      </ul>
+      <input type="checkbox" class="menu-toggle" id="menu3" />
+      <label for="menu3" class="menu">
+        <i class="material-icons">calendar_today</i> Horarios
+      </label>
+      <ul class="sub-menu">
+        <li><a href="horarios/registrar_horarios">Registrar horarios</a></li>
+        <li><a href="horarios/listar_horarios">Listar horarios</a></li>
+        <li><a href="horarios/modificar_horarios">Modificar horarios</a></li>
+      </ul>
+    </div>
+  </body>
 </html>

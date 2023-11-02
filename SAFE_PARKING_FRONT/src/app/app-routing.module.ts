@@ -26,6 +26,8 @@ import { ModificarLocalizacionesComponent } from './components/localizaciones/mo
 import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 import { HorarioComponent } from './components/horario/horario.component';
 import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -53,7 +55,7 @@ const routes: Routes = [
         component: ModificarLocalizacionesComponent,
       },
       {
-        path: 'modificar_localizaciones/ediciones/:id',
+        path: 'modificar_localizaciones/ediciones/:type',
         component: CreaeditaLocalizacionesComponent,
       },
     ],
@@ -126,10 +128,19 @@ const routes: Routes = [
 
   // usuarios
   {
-    path: 'registrar_usuario/:id',
-    component: CreaeditaUsuarioComponent,
+    path: 'usuarios',
+    component: UsuariosComponent,
+    children: [
+      {
+        path: 'registrar_usuarios',
+        component: CreaeditaUsuarioComponent,
+      },
+      {
+        path: 'listar_usuarios',
+        component: ListarUsuarioComponent,
+      },
+    ],
   },
-
   // apartados
   { path: 'footer', component: FooterComponent },
 

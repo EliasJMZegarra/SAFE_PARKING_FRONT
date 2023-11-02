@@ -22,6 +22,6 @@ export class ListarMembresiaComponent implements OnInit {
   }
   editMembership(membership: Membresia) {
     // Redireccionar al usuario al apartado de registro de usuario, pasando el ID de la membresía como parámetro.
-    this.router.navigate([`registrar_usuario/${membership.idMembresia}`]);
+    this.router.navigate([`registrar_usuario`]);
   }
 }

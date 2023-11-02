@@ -22,7 +22,7 @@ export class CreaeditaVehiculosComponent implements OnInit {
 
   vehiculo: Vehiculo = new Vehiculo();
   mensaje: string = '';
-  color: string = '#ffffff';
+  colorSeleccionado: string = '#ffffff'; // Color predeterminado
 
   categorias: { value: string; viewValue: string }[] = [
     { value: 'automóvil', viewValue: 'Automovil' },
@@ -44,7 +44,7 @@ export class CreaeditaVehiculosComponent implements OnInit {
     this.form = this.formBuilder.group({
       placaVehiculo: ['', Validators.required],
       categoriaVehiculo: ['', Validators.required],
-      colorVehiculo: ['', Validators.required],
+      colorVehiculo: [this.colorSeleccionado, Validators.required],
       marcaVehiculo: ['', Validators.required],
       tamanioVehiculo: ['', Validators.required],
       tarjetaPropiedadVehiculo: ['', Validators.required],
@@ -109,9 +109,8 @@ export class CreaeditaVehiculosComponent implements OnInit {
     }
     return control;
   }
-  colorcito(event: ColorEvent) {
-    // Handle the ColorEvent
-    const selectedColor: string = event.color.hex; // Extract the color hex value or use the needed property
-    // Further processing or assignment of the color value
+  colorcito(event: any) {
+    this.colorSeleccionado = event.color.hex; // Actualiza el color seleccionado
+    this.form.get('colorVehiculo')?.setValue(this.colorSeleccionado); // Actualiza el valor en el formulario
   }
 }

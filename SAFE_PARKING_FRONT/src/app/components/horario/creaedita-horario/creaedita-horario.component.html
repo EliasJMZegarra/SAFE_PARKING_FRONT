@@ -7,7 +7,6 @@
   </head>
 
   <body>
-    <router-outlet></router-outlet>
     <div [hidden]="route.children.length !== 0">
       <app-navbar></app-navbar>
 
@@ -74,13 +73,20 @@
           </mat-form-field>
 
           <br />
-          <button mat-raised-button color="primary">REGISTRAR</button>
+          <button
+            mat-raised-button
+            color="primary"
+            routerLink="/horarios/listar_horarios"
+          >
+            REGISTRAR
+          </button>
           <button mat-raised-button color="warn" routerLink="/listar">
             CANCELAR
           </button>
         </form>
       </div>
       <app-footer></app-footer>
+      <router-outlet></router-outlet>
     </div>
   </body>
 </html>

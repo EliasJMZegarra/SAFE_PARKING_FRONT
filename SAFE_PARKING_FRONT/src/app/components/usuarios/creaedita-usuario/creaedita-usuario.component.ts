@@ -84,9 +84,10 @@ export class CreaeditaUsuarioComponent implements OnInit {
         });
       });
 
+
       this.router.navigate(['']);
     } else {
-      this.mensaje = 'completa todos los campos!!';
+      this.mensaje = 'completa todos los campos!';
     }
   }
 

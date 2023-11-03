@@ -27,9 +27,9 @@ import { ModificarHorarioComponent } from './components/horario/modificar-horari
 import { HorarioComponent } from './components/horario/horario.component';
 import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
-import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component';
 import { RolComponent } from './components/rol/rol.component';
 import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component';
+import { ModificarUsuarioComponent } from './components/usuarios/modificar-usuario/modificar-usuario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -139,7 +139,7 @@ const routes: Routes = [
       },
       {
         path: 'listar_usuarios',
-        component: ListarUsuarioComponent,
+        component: ModificarUsuarioComponent,
       },
     ],
   },

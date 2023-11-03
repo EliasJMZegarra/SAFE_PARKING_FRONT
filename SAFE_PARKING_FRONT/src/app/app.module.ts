@@ -56,10 +56,10 @@ import { NavbarConductorComponent } from './components/navbar-conductor/navbar-c
 import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorMaterialModule } from 'ngx-color/material';
-import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component';
 import { RolComponent } from './components/rol/rol.component';
 import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component'; // <color-material></color-material>
 import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
+import { ModificarUsuarioComponent } from './components/usuarios/modificar-usuario/modificar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -96,9 +96,9 @@ import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculo
     NavbarArrendadorComponent,
     NavbarConductorComponent,
     ModificarHorarioComponent,
-    ListarUsuarioComponent,
     RolComponent,
     RegistarRolComponent,
+    ModificarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

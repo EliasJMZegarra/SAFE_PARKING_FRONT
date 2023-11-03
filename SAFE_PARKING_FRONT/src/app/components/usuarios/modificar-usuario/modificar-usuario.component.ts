@@ -7,11 +7,11 @@ import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
-  selector: 'app-listar-usuario',
-  templateUrl: './listar-usuario.component.html',
-  styleUrls: ['./listar-usuario.component.css'],
+  selector: 'app-modificar-usuario',
+  templateUrl: './modificar-usuario.component.html',
+  styleUrls: ['./modificar-usuario.component.css'],
 })
-export class ListarUsuarioComponent implements OnInit {
+export class ModificarUsuarioComponent implements OnInit {
   dataSource: MatTableDataSource<Usuario> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',

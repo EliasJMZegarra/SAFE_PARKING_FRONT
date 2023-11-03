@@ -71,6 +71,7 @@ export class CreaeditaUsuarioComponent implements OnInit {
       this.usuario.correo = this.form.value.correo;
       this.usuario.username = this.form.value.username;
       this.usuario.password = this.form.value.password;
+      this.usuario.genero = this.form.value.genero;
       this.usuario.dni = this.form.value.dni;
       this.usuario.imagen = this.form.value.imagen;
       this.usuario.fechaNacimiento = this.form.value.fechaNacimiento;

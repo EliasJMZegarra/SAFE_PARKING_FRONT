@@ -143,11 +143,12 @@ const routes: Routes = [
       },
     ],
   },
+
   //roles
   {
     path: 'roles',
     component: RolComponent,
-    children: [{ path: 'nuevo', component: RegistarRolComponent }],
+    children: [{ path: 'registrar_roles', component: RegistarRolComponent }],
   },
 
   // apartados

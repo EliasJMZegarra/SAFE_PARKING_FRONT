@@ -28,6 +28,8 @@ import { HorarioComponent } from './components/horario/horario.component';
 import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component';
+import { RolComponent } from './components/rol/rol.component';
+import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -141,6 +143,13 @@ const routes: Routes = [
       },
     ],
   },
+  //roles
+  {
+    path: 'roles',
+    component: RolComponent,
+    children: [{ path: 'nuevo', component: RegistarRolComponent }],
+  },
+
   // apartados
   { path: 'footer', component: FooterComponent },
 

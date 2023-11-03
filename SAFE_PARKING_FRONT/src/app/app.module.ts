@@ -28,7 +28,6 @@ import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 
-import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -57,7 +56,10 @@ import { NavbarConductorComponent } from './components/navbar-conductor/navbar-c
 import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorMaterialModule } from 'ngx-color/material';
-import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component'; // <color-material></color-material>
+import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/listar-usuario.component';
+import { RolComponent } from './components/rol/rol.component';
+import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component'; // <color-material></color-material>
+import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -68,9 +70,9 @@ import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/lis
     VehiculosComponent,
     HomeConductorComponent,
     HomeAdministradorComponent,
-    ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
+    ListarVehiculosComponent,
 
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
@@ -95,6 +97,8 @@ import { ListarUsuarioComponent } from './components/usuarios/listar-usuario/lis
     NavbarConductorComponent,
     ModificarHorarioComponent,
     ListarUsuarioComponent,
+    RolComponent,
+    RegistarRolComponent,
   ],
   imports: [
     BrowserModule,

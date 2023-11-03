@@ -147,7 +147,6 @@ import { RolComponent } from './components/rol/rol.component';
     CreaeditaVehiculosComponent,
     ListarAdminVehiculosComponent,
 
-
     //Reportes
     ReportesComponent,
     CantReservasPorFechaComponent,
@@ -215,9 +214,9 @@ import { RolComponent } from './components/rol/rol.component';
     RouterModule,
     NgxMaterialTimepickerModule,
     ColorSketchModule,
-    ColorMaterialModule
+    ColorMaterialModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

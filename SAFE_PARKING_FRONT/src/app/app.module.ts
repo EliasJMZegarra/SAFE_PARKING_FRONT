@@ -54,7 +54,11 @@ import { ModificarLocalizacionesComponent } from './components/localizaciones/mo
 import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
 import { NavbarArrendadorComponent } from './components/navbar-arrendador/navbar-arrendador.component';
 import { NavbarConductorComponent } from './components/navbar-conductor/navbar-conductor.component';
-import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { CantReservasPorFechaComponent } from './components/reportes/cant-reservas-por-fecha/cant-reservas-por-fecha.component';
+import { CantReservasPorTipoPagoComponent } from './components/reportes/cant-reservas-por-tipo-pago/cant-reservas-por-tipo-pago.component';
+import { CantReservasPorUsuarioComponent } from './components/reportes/cant-reservas-por-usuario/cant-reservas-por-usuario.component';
+import { CantIncidentesPorRolComponent } from './components/reportes/cant-incidentes-por-rol/cant-incidentes-por-rol.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,6 @@ import { ModificarHorarioComponent } from './components/horario/modificar-horari
     ListarVehiculosComponent,
     HomeArrendadorComponent,
     HomeComponent,
-
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
     LocalizacionesComponent,
@@ -90,7 +93,11 @@ import { ModificarHorarioComponent } from './components/horario/modificar-horari
     NavbarAdministradorComponent,
     NavbarArrendadorComponent,
     NavbarConductorComponent,
-    ModificarHorarioComponent,
+    ReportesComponent,
+    CantReservasPorFechaComponent,
+    CantReservasPorTipoPagoComponent,
+    CantReservasPorUsuarioComponent,
+    CantIncidentesPorRolComponent,
   ],
   imports: [
     BrowserModule,

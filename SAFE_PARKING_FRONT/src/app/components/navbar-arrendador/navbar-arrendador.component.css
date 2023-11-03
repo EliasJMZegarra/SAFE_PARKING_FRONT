@@ -90,4 +90,27 @@
   }
   
   /*FIN de Barra de navegacion Lateral-----------------*/
+   /*Flechas de despliegue en el menu*/
+   .icon-down {
+    display: inline-block;
+    align-items: center;
+    margin-left: auto; /* Mueve el contenedor de flechas hacia la derecha */
+  }
   
+  .icon-up {
+    display: none;
+    
+    align-items: center;
+    margin-left: auto; /* Mueve el contenedor de flechas hacia la derecha */
+  }
+  
+  .menu-toggle:checked+label .icon-down {
+    display: none;
+  }
+  
+  .menu-toggle:checked+label .icon-up {
+    display: inline-block;
+    display: flex; /* Alinea las flechas a la derecha */
+  }
+
+  /*Fin de Flechas de despliegue en el menu*/

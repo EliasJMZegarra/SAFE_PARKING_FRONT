@@ -8,16 +8,22 @@ import { Localizacion } from '../models/localizacion';
 const base_url = environment.base_datos; // ruta de la base de datos
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HorarioService {
-
   private url = `${base_url}/horarios`;
   private listaCambio = new Subject<Horario[]>();
   constructor(private http: HttpClient) {}
   // Obtener todos los Horarios
   list() {
     return this.http.get<Horario[]>(`${this.url}/Listar`);
+  }
+  setList(listaNueva: Horario[]) {
+    this.listaCambio.next(listaNueva);
+  }
+
+  getList() {
+    return this.listaCambio.asObservable();
   }
   // Obtener un Horario por ID
   listId(id: number) {
@@ -34,13 +40,5 @@ export class HorarioService {
   // Crear un nuevo Horario
   insert(lc: Horario) {
     return this.http.post(`${this.url}/Registrar`, lc);
-  }
-
-  setList(listaNueva: Horario[]) {
-    this.listaCambio.next(listaNueva);
-  }
-
-  getList() {
-    return this.listaCambio.asObservable();
   }
 }

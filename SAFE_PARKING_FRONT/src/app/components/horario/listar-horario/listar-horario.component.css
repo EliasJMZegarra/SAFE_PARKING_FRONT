@@ -1,24 +1,75 @@
-/*Estilos del form*/
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
+  /* Style for the table */
+  .calendar {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #b8b9b9, #81b6a2);
+    margin-bottom: 10px;
+    margin-top: 10px;
 
-table {
-  background-color: rgb(255, 255, 255);
-}
+  }
 
-.container {
-  width: 50%;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  /* Centra horizontalmente */
-  margin-top: 50px;
-}
+  .calendar th,
+  .calendar td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
 
-h1 {
-  color: #333;
-}
+  }
+
+  .calendar th {
+    background-color: #888181;
+    color: aliceblue;
+  }
+
+  /* Style for schedule information */
+  .horario-item {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin: 10px;
+    background-color: #40f1d4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .horario-item p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .horario-item button {
+    padding: 8px 16px;
+    background-color: #0529f7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .horario-item button:hover {
+    background-color: #2980b9;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .calendar th,
+    .calendar td {
+      padding: 8px;
+    }
+
+    .horario-item {
+      padding: 10px;
+      margin: 5px;
+    }
+
+    .horario-item p {
+      font-size: 12px;
+    }
+
+    .horario-item button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }

@@ -6,4 +6,5 @@ export class Vehiculo {
   marcaVehiculo: string = '';
   tamanioVehiculo: number = 0;
   tarjetaPropiedadVehiculo: string = '';
+  imagenVehiculo: string = '';
 }

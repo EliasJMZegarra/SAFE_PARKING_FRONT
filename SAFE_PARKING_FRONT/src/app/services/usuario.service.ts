@@ -12,42 +12,33 @@ const base_url = environment.base_datos;
 export class UsuarioService {
   private url = `${base_url}/usuarios`;
   private listaCambio = new Subject<Usuario[]>();
-
   constructor(private http: HttpClient) {}
-
-  insert(m_usuario: Usuario) {
-    const endpoint = this.url + `/Registrar`;
-    console.log(m_usuario);
-    return this.http.post<Usuario>(endpoint, m_usuario);
-  }
-
+  // Obtener todos los vehículos
   list() {
-    return this.http.get<Usuario[]>(this.url);
+    return this.http.get<Usuario[]>(`${this.url}/Listar`);
   }
+  // Obtener un Membresia por ID
+  getById(id: number) {
+    return this.http.get<Usuario>(`${this.url}/ListarporID/${id}`);
+  }
+  // Actualizar un Membresia
+  update(vehiculo: Usuario) {
+    return this.http.put(`${this.url}/Modificar`, vehiculo);
+  }
+  // Eliminar un Membresia
+  delete(id: number) {
+    return this.http.delete(`${this.url}/Eliminar/${id}`);
+  }
+  // Crear un nuevo Membresia
+  insert(me: Usuario) {
+    return this.http.post(`${this.url}/Registrar`, me);
+  }
+
   setList(listaNueva: Usuario[]) {
     this.listaCambio.next(listaNueva);
   }
+
   getList() {
     return this.listaCambio.asObservable();
-  }
-
-  getUserByID(id: Number) {
-    const endpoint = `${base_url}/ListarporID/${id}`;
-    return this.http.get<Usuario>(endpoint);
-  }
-  update(id: any, m_customer: Usuario) {
-    const endpoint = `${base_url}/Modificar`;
-    return this.http.put<Usuario>(endpoint, m_customer);
-  }
-
-  eliminar(id: number) {
-    const endpoint = `${base_url}/Eliminar/${id}`;
-    return this.http.delete<Usuario>(endpoint);
-  }
-  uploadImage(file: File) {
-    // TODO: Implement this function to upload the image to a server.
-    return new Promise((resolve, reject) => {
-      resolve('');
-    });
   }
 }

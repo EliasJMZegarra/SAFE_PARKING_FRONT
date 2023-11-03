@@ -17,11 +17,11 @@ const iconUrl = 'assets/marker-icon.png';
 const shadowUrl = 'assets/marker-shadow.png';
 
 @Component({
-  selector: 'app-listar-localizaciones',
-  templateUrl: './listar-localizaciones.component.html',
-  styleUrls: ['./listar-localizaciones.component.css'],
+  selector: 'app-listar-usuario-localizaciones',
+  templateUrl: './listar-usuario-localizaciones.component.html',
+  styleUrls: ['./listar-usuario-localizaciones.component.css'],
 })
-export class ListarLocalizacionesComponent implements OnInit {
+export class ListarusuarioLocalizacionesComponent implements OnInit {
   dataSource: MatTableDataSource<Localizacion> = new MatTableDataSource();
 
   editarLocalizacion: Localizacion | null = null;
@@ -54,7 +54,6 @@ export class ListarLocalizacionesComponent implements OnInit {
       }
     );
   }
-  
 
   initializeMapForLocation(element: Localizacion): void {
     const mapId = `map_${element.idLocalizacion}`;

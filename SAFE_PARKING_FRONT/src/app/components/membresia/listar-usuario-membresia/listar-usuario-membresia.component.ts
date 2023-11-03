@@ -3,11 +3,11 @@ import { Membresia } from 'src/app/models/membresia';
 import { MembresiaService } from 'src/app/services/membresia.service';
 import { Router, ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-listar-membresia',
-  templateUrl: './listar-membresia.component.html',
-  styleUrls: ['./listar-membresia.component.css'],
+  selector: 'app-listar-usuario-membresia',
+  templateUrl: './listar-usuario-membresia.component.html',
+  styleUrls: ['./listar-usuario-membresia.component.css'],
 })
-export class ListarMembresiaComponent implements OnInit {
+export class ListarUsuarioMembresiaComponent implements OnInit {
   memberships: Membresia[] = [];
   constructor(
     private membershipService: MembresiaService,

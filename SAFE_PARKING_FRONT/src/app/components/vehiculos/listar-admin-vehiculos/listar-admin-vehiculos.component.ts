@@ -1,4 +1,4 @@
-import { Vehiculo } from './../../../models/vehiculo';
+import { Vehiculo } from '../../../models/vehiculo';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -9,11 +9,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
-  selector: 'app-listar-vehiculos',
-  templateUrl: './listar-vehiculos.component.html',
-  styleUrls: ['./listar-vehiculos.component.css'],
+  selector: 'app-listar-admin-vehiculos',
+  templateUrl: './listar-admin-vehiculos.component.html',
+  styleUrls: ['./listar-admin-vehiculos.component.css'],
 })
-export class ListarVehiculosComponent implements OnInit {
+export class ListarAdminVehiculosComponent implements OnInit {
   dataSource: MatTableDataSource<Vehiculo> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',

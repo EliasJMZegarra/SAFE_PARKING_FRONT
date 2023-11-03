@@ -7,11 +7,11 @@ import { HorarioService } from 'src/app/services/horario.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-modificar-horario',
-  templateUrl: './modificar-horario.component.html',
-  styleUrls: ['./modificar-horario.component.css'],
+  selector: 'app-listar-admin-horario',
+  templateUrl: './listar-admin-horario.component.html',
+  styleUrls: ['./listar-admin-horario.component.css'],
 })
-export class ModificarHorarioComponent implements OnInit {
+export class ListarAdminHorarioComponent implements OnInit {
   dataSource: MatTableDataSource<Horario> = new MatTableDataSource();
 
   displayedColumns: string[] = [

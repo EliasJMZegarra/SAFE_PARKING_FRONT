@@ -4,11 +4,11 @@ import { HorarioService } from 'src/app/services/horario.service';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-listar-horario',
-  templateUrl: './listar-horario.component.html',
-  styleUrls: ['./listar-horario.component.css'],
+  selector: 'app-listar-usuario-horario',
+  templateUrl: './listar-usuario-horario.component.html',
+  styleUrls: ['./listar-usuario-horario.component.css'],
 })
-export class ListarHorarioComponent implements OnInit {
+export class ListarUsuarioHorarioComponent implements OnInit {
   horariosPorFecha: { fecha: string; horarios: Horario[] }[] = [];
   horasDelDia: string[] = this.generarHorasDelDia(); // Array de horas del día
 

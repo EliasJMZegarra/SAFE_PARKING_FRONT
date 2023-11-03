@@ -7,11 +7,11 @@ import { LocalizacionService } from '../../../services/localizacion.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-modificar-localizaciones',
-  templateUrl: './modificar-localizaciones.component.html',
-  styleUrls: ['./modificar-localizaciones.component.css'],
+  selector: 'app-listar-admin-localizaciones',
+  templateUrl: './listar-admin-localizaciones.component.html',
+  styleUrls: ['./listar-admin-localizaciones.component.css'],
 })
-export class ModificarLocalizacionesComponent {
+export class ListarAdminLocalizacionesComponent {
   dataSource: MatTableDataSource<Localizacion> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idLocalizacion',

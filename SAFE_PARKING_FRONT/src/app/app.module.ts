@@ -35,31 +35,31 @@ import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-ve
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
 import { LocalizacionesComponent } from './components/localizaciones/localizaciones.component';
 import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
-import { ListarLocalizacionesComponent } from './components/localizaciones/listar-localizaciones/listar-localizaciones.component';
 import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
 import { MembresiaComponent } from './components/membresia/membresia.component';
 import { CreaeditaMembresiaComponent } from './components/membresia/creaedita-membresia/creaedita-membresia.component';
-import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
 import { BuscarMembresiaComponent } from './components/membresia/buscar-membresia/buscar-membresia.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { CreaeditaUsuarioComponent } from './components/usuarios/creaedita-usuario/creaedita-usuario.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HorarioComponent } from './components/horario/horario.component';
 import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
-import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Necesario en el CMD ->   npm install  --save ngx-material-timepicker
 import { HomeAdministradorComponent } from './components/home-administrador/home-administrador.component';
-import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
 import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
 import { NavbarArrendadorComponent } from './components/navbar-arrendador/navbar-arrendador.component';
 import { NavbarConductorComponent } from './components/navbar-conductor/navbar-conductor.component';
-import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 import { ColorSketchModule } from 'ngx-color/sketch';
 import { ColorMaterialModule } from 'ngx-color/material';
 import { RolComponent } from './components/rol/rol.component';
-import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component'; // <color-material></color-material>
-import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
-import { ModificarUsuarioComponent } from './components/usuarios/modificar-usuario/modificar-usuario.component';
+import { listarAdminUsuarioComponent } from './components/usuarios/listar-admin-usuario/listar-admin-usuario.component';
+import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
+import { ListarAdminVehiculosComponent } from './components/vehiculos/listar-admin-vehiculos/listar-admin-vehiculos.component';
+import { ListarUsuarioMembresiaComponent } from './components/membresia/listar-usuario-membresia/listar-usuario-membresia.component';
+import { ListarusuarioLocalizacionesComponent } from './components/localizaciones/listar-usuario-localizaciones/listar-usuario-localizaciones.component';
+import { ListarAdminLocalizacionesComponent } from './components/localizaciones/listar-admin-localizaciones/listar-admin-localizaciones.component';
+import { ListarUsuarioHorarioComponent } from './components/horario/listar-usuario-horario/listar-usuario-usuario-horario.component';
+import { ListarAdminHorarioComponent } from './components/horario/listar-admin-horario/listar-admin-horario.component';
 
 @NgModule({
   declarations: [
@@ -72,33 +72,32 @@ import { ModificarUsuarioComponent } from './components/usuarios/modificar-usuar
     HomeAdministradorComponent,
     HomeArrendadorComponent,
     HomeComponent,
-    ListarVehiculosComponent,
-
+    ListarAdminVehiculosComponent,
     CreaeditaVehiculosComponent,
     BuscarVehiculosComponent,
     LocalizacionesComponent,
     CreaeditaLocalizacionesComponent,
-    ListarLocalizacionesComponent,
+    ListarusuarioLocalizacionesComponent,
     BuscarLocalizacionesComponent,
     MembresiaComponent,
     CreaeditaMembresiaComponent,
-    ListarMembresiaComponent,
     BuscarMembresiaComponent,
+    ListarUsuarioMembresiaComponent,
     UsuariosComponent,
     CreaeditaUsuarioComponent,
     FooterComponent,
     LocalizacionesComponent,
     HorarioComponent,
     CreaeditaHorarioComponent,
-    ListarHorarioComponent,
-    ModificarLocalizacionesComponent,
+    ListarUsuarioHorarioComponent,
+    ListarAdminLocalizacionesComponent,
     NavbarAdministradorComponent,
     NavbarArrendadorComponent,
     NavbarConductorComponent,
-    ModificarHorarioComponent,
+    ListarAdminHorarioComponent,
     RolComponent,
-    RegistarRolComponent,
-    ModificarUsuarioComponent,
+    CreaeditaRolComponent,
+    listarAdminUsuarioComponent,
   ],
   imports: [
     BrowserModule,

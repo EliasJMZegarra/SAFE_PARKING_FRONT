@@ -12,11 +12,11 @@ import { RolService } from 'src/app/services/rol.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
-  selector: 'app-registar-rol',
-  templateUrl: './registar-rol.component.html',
-  styleUrls: ['./registar-rol.component.css'],
+  selector: 'app-creaedita-rol',
+  templateUrl: './creaedita-rol.component.html',
+  styleUrls: ['./creaedita-rol.component.css'],
 })
-export class RegistarRolComponent {
+export class CreaeditaRolComponent {
   form: FormGroup = new FormGroup({});
   rol: Rol = new Rol();
   mensaje: string = '';

@@ -8,13 +8,10 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CreaeditaLocalizacionesComponent } from './components/localizaciones/creaedita-localizaciones/creaedita-localizaciones.component';
-import { ListarLocalizacionesComponent } from './components/localizaciones/listar-localizaciones/listar-localizaciones.component';
 import { BuscarLocalizacionesComponent } from './components/localizaciones/buscar-localizaciones/buscar-localizaciones.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { CreaeditaVehiculosComponent } from './components/vehiculos/creaedita-vehiculos/creaedita-vehiculos.component';
 import { BuscarVehiculosComponent } from './components/vehiculos/buscar-vehiculos/buscar-vehiculos.component';
-import { ListarVehiculosComponent } from './components/vehiculos/listar-vehiculos/listar-vehiculos.component';
-import { ListarMembresiaComponent } from './components/membresia/listar-membresia/listar-membresia.component';
 import { CreaeditaHorarioComponent } from './components/horario/creaedita-horario/creaedita-horario.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,14 +19,17 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeArrendadorComponent } from './components/home-arrendador/home-arrendador.component';
 import { HomeConductorComponent } from './components/home-conductor/home-conductor.component';
 import { NgModule } from '@angular/core';
-import { ModificarLocalizacionesComponent } from './components/localizaciones/modificar-localizaciones/modificar-localizaciones.component';
-import { ModificarHorarioComponent } from './components/horario/modificar-horario/modificar-horario.component';
 import { HorarioComponent } from './components/horario/horario.component';
-import { ListarHorarioComponent } from './components/horario/listar-horario/listar-horario.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RolComponent } from './components/rol/rol.component';
-import { RegistarRolComponent } from './components/rol/registar-rol/registar-rol.component';
-import { ModificarUsuarioComponent } from './components/usuarios/modificar-usuario/modificar-usuario.component';
+import { listarAdminUsuarioComponent } from './components/usuarios/listar-admin-usuario/listar-admin-usuario.component';
+import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
+import { ListarAdminVehiculosComponent } from './components/vehiculos/listar-admin-vehiculos/listar-admin-vehiculos.component';
+import { ListarUsuarioMembresiaComponent } from './components/membresia/listar-usuario-membresia/listar-usuario-membresia.component';
+import { ListarusuarioLocalizacionesComponent } from './components/localizaciones/listar-usuario-localizaciones/listar-usuario-localizaciones.component';
+import { ListarAdminLocalizacionesComponent } from './components/localizaciones/listar-admin-localizaciones/listar-admin-localizaciones.component';
+import { ListarUsuarioHorarioComponent } from './components/horario/listar-usuario-horario/listar-usuario-usuario-horario.component';
+import { ListarAdminHorarioComponent } from './components/horario/listar-admin-horario/listar-admin-horario.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -45,16 +45,16 @@ const routes: Routes = [
         component: CreaeditaLocalizacionesComponent,
       },
       {
-        path: 'listar_localizaciones',
-        component: ListarLocalizacionesComponent,
+        path: 'listar_usuario_localizaciones',
+        component: ListarusuarioLocalizacionesComponent,
       },
       {
         path: 'buscar_localizaciones',
         component: BuscarLocalizacionesComponent,
       },
       {
-        path: 'modificar_localizaciones',
-        component: ModificarLocalizacionesComponent,
+        path: 'listar_admin_localizaciones',
+        component: ListarAdminLocalizacionesComponent,
       },
       {
         path: 'modificar_localizaciones/ediciones/:type',
@@ -77,8 +77,8 @@ const routes: Routes = [
         component: BuscarVehiculosComponent,
       },
       {
-        path: 'listar_vehiculos',
-        component: ListarVehiculosComponent,
+        path: 'listar_admin_vehiculos',
+        component: ListarAdminVehiculosComponent,
       },
     ],
   },
@@ -93,8 +93,8 @@ const routes: Routes = [
         component: CreaeditaMembresiaComponent,
       },
       {
-        path: 'listar_membresias',
-        component: ListarMembresiaComponent,
+        path: 'listar_usuario_membresias',
+        component: ListarUsuarioMembresiaComponent,
       },
       {
         path: 'buscar_membresias',
@@ -113,13 +113,13 @@ const routes: Routes = [
         component: CreaeditaHorarioComponent,
       },
       {
-        path: 'listar_horarios',
-        component: ListarHorarioComponent,
+        path: 'listar_usuario_horarios',
+        component: ListarUsuarioHorarioComponent,
       },
 
       {
-        path: 'modificar_horarios',
-        component: ModificarHorarioComponent,
+        path: 'listar_admin_horarios',
+        component: ListarAdminHorarioComponent,
       },
       {
         path: 'modificar_horarios/ediciones/:id',
@@ -138,8 +138,8 @@ const routes: Routes = [
         component: CreaeditaUsuarioComponent,
       },
       {
-        path: 'listar_usuarios',
-        component: ModificarUsuarioComponent,
+        path: 'listar_admin_usuarios',
+        component: listarAdminUsuarioComponent,
       },
     ],
   },
@@ -148,7 +148,7 @@ const routes: Routes = [
   {
     path: 'roles',
     component: RolComponent,
-    children: [{ path: 'registrar_roles', component: RegistarRolComponent }],
+    children: [{ path: 'registrar_roles', component: CreaeditaRolComponent }],
   },
 
   // apartados

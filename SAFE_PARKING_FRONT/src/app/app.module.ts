@@ -89,6 +89,8 @@ import { ListarAdminHorarioEstacionamientoComponent } from './components/horario
 import { ListarUsuarioHorarioEstacionamientoComponent } from './components/horario-estacionamiento/listar-usuario-horario-estacionamiento/listar-usuario-horario-estacionamiento.component';
 import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
 import { RolComponent } from './components/rol/rol.component';
+import { ListarAdminMembresiaComponent } from './components/membresia/listar-admin-membresia/listar-admin-membresia.component';
+
 
 @NgModule({
   declarations: [
@@ -130,6 +132,7 @@ import { RolComponent } from './components/rol/rol.component';
     MembresiaComponent,
     CreaeditaMembresiaComponent,
     ListarUsuarioMembresiaComponent,
+    ListarAdminMembresiaComponent,
 
     //Rol
     RolComponent,
@@ -189,6 +192,7 @@ import { RolComponent } from './components/rol/rol.component';
     ListarUsuarioIncidenteComponent,
     ListarAdminIncidenteComponent,
     CreaeditaIncidenteComponent,
+    
   ],
   imports: [
     BrowserModule,

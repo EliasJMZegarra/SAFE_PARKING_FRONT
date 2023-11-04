@@ -36,6 +36,7 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { listarAdminUsuarioComponent } from './components/usuarios/listar-admin-usuario/listar-admin-usuario.component';
 import { RolComponent } from './components/rol/rol.component';
 import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
+import { ListarAdminMembresiaComponent } from './components/membresia/listar-admin-membresia/listar-admin-membresia.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -106,6 +107,11 @@ const routes: Routes = [
         path: 'buscar_membresias',
         component: BuscarMembresiaComponent,
       },
+      {
+        path: 'listar_admin_membresias',
+        component: ListarAdminMembresiaComponent,
+      },
+
     ],
   },
   //Horarios

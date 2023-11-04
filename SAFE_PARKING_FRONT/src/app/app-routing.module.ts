@@ -69,6 +69,7 @@ const routes: Routes = [
     ],
   },
 
+
   // vehiculos
   {
     path: 'vehiculos',

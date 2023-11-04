@@ -175,7 +175,7 @@ const routes: Routes = [
       {
         path: 'cant-reservas-por-usuario',
         component: CantReservasPorUsuarioComponent,
-      }
+      },
     ],
   },
 
@@ -206,4 +206,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

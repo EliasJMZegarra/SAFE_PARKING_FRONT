@@ -38,8 +38,8 @@ export class ListarAdminIncidenteComponent {
       this.dataSource.paginator = this.paginator;
     });
   }
-  eliminar(idlocalizacion: number) {
-    this.iS.delete(idlocalizacion).subscribe(() => {
+  eliminar(idIncidente: number) {
+    this.iS.delete(idIncidente).subscribe(() => {
       this.iS.list().subscribe((data) => {
         this.iS.setList(data);
       });

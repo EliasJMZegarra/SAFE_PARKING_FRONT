@@ -37,6 +37,9 @@ import { listarAdminUsuarioComponent } from './components/usuarios/listar-admin-
 import { RolComponent } from './components/rol/rol.component';
 import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
 import { ListarAdminMembresiaComponent } from './components/membresia/listar-admin-membresia/listar-admin-membresia.component';
+import { IncidenteComponent } from './components/incidente/incidente.component';
+import { ListarAdminIncidenteComponent } from './components/incidente/listar-admin-incidente/listar-admin-incidente.component';
+import { CreaeditaIncidenteComponent } from './components/incidente/creaedita-incidente/creaedita-incidente.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -92,7 +95,7 @@ const routes: Routes = [
 
   // membresias
   {
-    path: 'membresia',
+    path: 'membresias',
     component: MembresiaComponent,
     children: [
       {
@@ -114,6 +117,36 @@ const routes: Routes = [
 
     ],
   },
+  // Incidentes
+
+  {
+    path:'incidentes',
+    component: IncidenteComponent,
+    children:[
+      {
+        path: 'listar_admin_incidentes',
+        component: ListarAdminIncidenteComponent,
+      },
+      {
+        path: 'registrar_incidentes',
+        component: CreaeditaIncidenteComponent,
+      },
+
+
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
   //Horarios
 
   {

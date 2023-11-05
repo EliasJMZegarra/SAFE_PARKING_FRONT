@@ -18,7 +18,7 @@ export class MembresiaService {
     return this.http.get<Membresia[]>(`${this.url}/Listar`);
   }
   // Obtener un Membresia por ID
-  getById(id: number) {
+  listId(id: number) {
     return this.http.get<Membresia>(`${this.url}/ListarporID/${id}`);
   }
   // Actualizar un Membresia

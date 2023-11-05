@@ -98,8 +98,7 @@ const routes: Routes = [
     path: 'membresias',
     component: MembresiaComponent,
     children: [
-      {
-        path: 'registrar_membresias',
+      { path: 'registrar_membresias',
         component: CreaeditaMembresiaComponent,
       },
       {
@@ -113,6 +112,10 @@ const routes: Routes = [
       {
         path: 'listar_admin_membresias',
         component: ListarAdminMembresiaComponent,
+      },
+      {
+        path: 'listar_admin_membresias/ediciones/:id',
+        component: CreaeditaMembresiaComponent,
       },
 
     ],

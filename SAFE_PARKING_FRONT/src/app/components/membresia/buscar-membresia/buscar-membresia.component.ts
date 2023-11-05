@@ -24,7 +24,7 @@ export class BuscarMembresiaComponent implements OnInit {
   }
 
   buscar() {
-    this.membresiaService.getById(this.idMembresia).subscribe(
+    this.membresiaService.listId(this.idMembresia).subscribe(
       (data: Membresia) => {
         this.membresia = data;
       },

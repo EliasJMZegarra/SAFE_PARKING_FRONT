@@ -7,13 +7,14 @@
     </head>
   
     <body>
-  
-  
       <div class="litle">
         <h2 style="text-align: center">LISTA DE INCIDENTES</h2>
       </div>
   
       <div class="container">
+        <mat-form-field>
+          <input style="text-align: left" matInput (keyup)=filter($event) placeholder="buscar"/>
+        </mat-form-field>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->

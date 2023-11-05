@@ -18,7 +18,7 @@ export class IncidenteService {
     return this.http.get<Incidente[]>(`${this.url}/Listar`);
   }
   // Obtener una incidencia por ID
-  getById(id: number) {
+  listId(id: number) {
     return this.http.get<Incidente>(`${this.url}/ListarporID/${id}`);
   }
   // Actualizar Incidente

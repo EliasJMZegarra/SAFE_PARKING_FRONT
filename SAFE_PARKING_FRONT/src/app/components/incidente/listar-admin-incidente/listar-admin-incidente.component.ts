@@ -45,4 +45,7 @@ export class ListarAdminIncidenteComponent {
       });
     });
   }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
+  }
 }

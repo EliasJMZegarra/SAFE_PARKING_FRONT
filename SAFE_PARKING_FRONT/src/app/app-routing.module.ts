@@ -40,6 +40,7 @@ import { ListarAdminMembresiaComponent } from './components/membresia/listar-adm
 import { IncidenteComponent } from './components/incidente/incidente.component';
 import { ListarAdminIncidenteComponent } from './components/incidente/listar-admin-incidente/listar-admin-incidente.component';
 import { CreaeditaIncidenteComponent } from './components/incidente/creaedita-incidente/creaedita-incidente.component';
+import { BuscarIncidenteComponent } from './components/incidente/buscar-incidente/buscar-incidente.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
@@ -134,7 +135,14 @@ const routes: Routes = [
         path: 'registrar_incidentes',
         component: CreaeditaIncidenteComponent,
       },
-
+      {
+        path: 'listar_admin_incidentes/ediciones/:id',
+        component: CreaeditaIncidenteComponent,
+      },
+      {
+        path: 'buscar_incidentes',
+        component: BuscarIncidenteComponent,
+      },
 
     ]
   },
